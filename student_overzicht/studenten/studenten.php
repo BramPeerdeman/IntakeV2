@@ -5,7 +5,7 @@ require 'config.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Table with database</title>
+    <title>Student Overzicht</title>
     <style>
         table {
             border-collapse: collapse;
