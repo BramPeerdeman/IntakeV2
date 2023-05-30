@@ -4,6 +4,7 @@ require 'config.php';
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Student Overzicht</title>
     <style>
@@ -39,20 +40,24 @@ require 'config.php';
             <th>score</th>
         </tr>
         <?php
-        $sql = "SELECT p.Voornaam, p.Geslacht, p.StudentID, s.Intake_rondeID, o.Naam, p.Gesprek_Software_Development_YN, s.Score
-                FROM Persoon_inschrijving p
-                JOIN Score s ON p.StudentID = p.StudentID
-                JOIN Opdracht o ON o.OpdrachtID";
+        $sql = "SELECT CONCAT(p.Voornaam, ' ', p.`t.v.`, ' ', p.Achternaam) AS HeleNaam, p.Geslacht, p.StudentID, i.Naam AS IntakeNaam, o.Naam AS OpdrachtNaam, p.Gesprek_Software_Development_YN, s.Score
+FROM Persoon_inschrijving p
+JOIN Intake i ON i.Naam = i.Naam
+JOIN Score s ON p.StudentID = s.StudentID
+JOIN Opdracht o ON o.OpdrachtID = o.OpdrachtID";
+
         $result = $mysqli->query($sql);
+
         if (!$result) {
             echo "Error: " . $mysqli->error;
             // Handle the error appropriately
         }
+
         if ($result->num_rows > 0) {
             // Output data of each row
             while ($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["Voornaam"] . "</td><td>" . $row["Geslacht"] . "</td><td>"
-                    . $row["StudentID"] . "</td><td>" . $row["Intake_rondeID"] . "</td><td>" . $row["Naam"] . "</td><td>"
+                echo "<tr><td>" . $row["HeleNaam"] . "</td><td>" . $row["Geslacht"] . "</td><td>"
+                    . $row["StudentID"] . "</td><td>" . $row["IntakeNaam"] . "</td><td>" . $row["OpdrachtNaam"] . "</td><td>"
                     . $row["Gesprek_Software_Development_YN"] . "</td><td>" . $row["Score"] . "</td></tr>";
             }
             echo "</table>";
@@ -63,4 +68,5 @@ require 'config.php';
         ?>
     </table>
 </body>
+
 </html>
