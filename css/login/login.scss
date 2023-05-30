@@ -35,11 +35,6 @@ body {
 
 // ******************************************************************** ...
 
-@media screen and (max-width: 600px) {
-}
-
-
-
 .login {
     width: 400px;
     background-color: #ffffff;
@@ -97,6 +92,7 @@ body {
         }
     }
 }
+
 .navtop {
     background-color: #2f3947;
     height: 60px;
@@ -182,4 +178,9 @@ body.loggedin {
             margin: 0 0 10px 0;
         }
     }
+}
+
+// ******************************************************************** ...
+
+@media screen and (max-width: 600px) {
 }
