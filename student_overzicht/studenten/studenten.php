@@ -4,82 +4,55 @@ require 'config.php';
 
 ?>
 
+<!DOCTYPE html>
+<html>
+
 <head>
+    <title>Table with database</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            color: #588c7e;
+            font-family: monospace;
+            font-size: 25px;
+            text-align: left;
+        }
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Overzicht</title>
+        th {
+            background-color: #588c7e;
+            color: white;
+        }
 
-</head> 
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+    </style>
+</head>
 
-
-<?php
-
-
-$result = mysqli_query($mysqli, $query);
-
-if (mysqli_num_rows($result) > 0)
-{
-    // maak een tabel aan
-    echo "<table border='1px' class='table table-striped custom-table'>";
-
-    // eerste de headers van de tabel
-    echo "<tr>
-    <th>naam</th>
-    <th>geslacht</th>
-    <th>id</th>
-    <th>intake</th>
-    <th>opdracht</th>
-    <th>beoordeeld</th>
-    <th>score</th>
-    </tr>";
-
-    while ($item = mysqli_fetch_assoc($result))
-
-    {
-      ?>
-      <tbody id="myTable">
+<body>
+    <table>
+        <tr>
+            <th>naam</th>
+            <th>geslacht</th>
+            <th>id</th>
+        </tr>
         <?php
-        // toon de gegevens van het item in een tabelrij
-        echo "<tr>";
-             echo "<td>" . $item['Voornaam'] . "</td>";
-             echo "<td>" . $item['Geslacht'] . "</td>";
-             echo "<td>" . $item['StudentID'] . "</td>";
-             echo "<td>" . $item['Intake_rondeID'] . "</td>";
-             echo "<td>" . $item['Opmerking'] . "</td>";
-             echo "<td>" . $item['Score'] . "</td>";
-        echo "</tr>";
+        $sql = "SELECT Voornaam, Geslacht, StudentID FROM Persoon_inschrijving";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr><td>" . $row["Voornaam"] . "</td><td>" . $row["Geslacht"] . "</td><td>"
+                    . $row["StudentID"] . "</td></tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "0 results";
+        }
+        $conn->close();
         ?>
-        </tbody>
-        <?php
-    }
+    </table>
+</body>
 
-    // sluit de tabel af
-    echo "</table>";
-}
-
-$result = mysqli_query($mysqli, $query);
-
-if (!$result)
-// laat de records zien
-{
-    echo "<p>FOUT!</p>";
-    echo "<p>" . $query ."</p>";
-    echo "<p>" . mysqli_error($mysqli) . "</p>";
-    exit;
-}
-
-// else
-// // als er geen records zijn
-// {
-//     echo "<p>Geen items gevonden!</p>";
-    
-// }
-
-?>
-
-
-
-
-
+</html>
