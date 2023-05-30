@@ -39,17 +39,17 @@ require 'config.php';
             <th>score</th>
         </tr>
         <?php
-        $sql = "SELECT p.Voornaam, p.Geslacht, p.StudentID, s.Intake_rondeID, o.Naam, s.Gesprek_Software_Development_YN, s.Score
+        $sql = "SELECT p.Voornaam, p.Geslacht, p.StudentID, s.Intake_rondeID, o.Naam, p.Gesprek_Software_Development_YN, s.Score
                 FROM Persoon_inschrijving p
-                JOIN Score s ON p.StudentID = s.StudentID
-                JOIN Opdracht o ON s.Opdracht_Id = o.OpdrachtID";
+                JOIN Score s ON p.StudentID = p.StudentID
+                JOIN Opdracht o ON o.OpdrachtID";
         $result = $mysqli->query($sql);
         if (!$result) {
             echo "Error: " . $mysqli->error;
             // Handle the error appropriately
         }
         if ($result->num_rows > 0) {
-            // output data of each row
+            // Output data of each row
             while ($row = $result->fetch_assoc()) {
                 echo "<tr><td>" . $row["Voornaam"] . "</td><td>" . $row["Geslacht"] . "</td><td>"
                     . $row["StudentID"] . "</td><td>" . $row["Intake_rondeID"] . "</td><td>" . $row["Naam"] . "</td><td>"
