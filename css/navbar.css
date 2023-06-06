@@ -34,12 +34,12 @@ body {
   transform: translate(-50%, 0);
 }
 .navbar .items {
-  background-color: red;
+  background-color: transparent;
   width: 150px;
   height: 150px;
 }
 .navbar .items:last-child {
-  background-color: green;
+  background-color: transparent;
 }
 .navbar .items > div {
   background-color: #85D109;

@@ -55,12 +55,12 @@ body {
 }
 
 .items{
-    background-color: red;
+    background-color: transparent;
     width: 150px;
     height: 150px;
 
     &:last-child{
-        background-color: green;
+        background-color: transparent;
     }
 }
 .items > div{
