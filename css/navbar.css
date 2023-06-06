@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,300&display=swap");
 @font-face {
   font-family: face;
   src: url(../);
@@ -8,7 +9,8 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
 }
 
 html,
@@ -22,35 +24,52 @@ body {
   background-color: #85D109;
   width: 150px;
   height: 100vh;
-  display: grid;
-  grid-row: 5;
 }
 .navbar .navbarLine {
-  position: relative;
-  width: 80%;
+  position: absolute;
+  width: 100px;
   height: 1px;
-  background-color: #000000;
-  left: 50%;
-  transform: translate(-50%, 0);
+  bottom: 170px;
+  border: solid black;
+  left: 25px;
 }
 .navbar .items {
-  background-color: red;
+  margin: 0 0 10px 0;
+  background-color: transparent;
   width: 150px;
   height: 150px;
+  transition: 0.2s;
 }
 .navbar .items:last-child {
-  background-color: green;
+  position: absolute;
+  bottom: 0;
+  background-color: transparent;
 }
 .navbar .items > div {
-  background-color: #85D109;
-  width: 80%;
-  height: 80%;
+  background-color: transparent;
+  width: 60%;
+  height: 60%;
   position: relative;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.navbar .items > div > p {
+  text-align: center;
+}
+.navbar .items:hover {
+  background-color: rgba(0, 0, 0, 0.0823529412);
+}
 .navbar .logo {
-  width: 90% !important;
-  height: 90% !important;
+  width: 75% !important;
+  height: 75% !important;
+}
+.navbar .logout {
+  transform: rotate();
+}
+
+@media screen and (max-width: 1250px) {
+  body {
+    background-color: #000000;
+  }
 }/*# sourceMappingURL=navbar.css.map */

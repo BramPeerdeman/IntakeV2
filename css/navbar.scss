@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,300&display=swap');
+
 @font-face {
     font-family: face;
     src: url(../);
@@ -26,7 +28,8 @@ $color-letters: #000000;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
 html,
@@ -42,41 +45,52 @@ body {
     background-color: $color-GLRgroen;
     width: 150px;
     height: 100vh;
-    display: grid;
-    grid-row: 5;
+
 
 .navbarLine{
-    position: relative;
-    width: 80%;
+    position: absolute;
+    width: 100px;
     height: 1px;
-    background-color: #000000;
-    left: 50%;
-    transform: translate(-50%, 0);
+    bottom: 170px;
+    border: solid black;
+    left: 25px;
 }
 
 .items{
-    background-color: red;
+    margin: 0 0 10px 0;
+    background-color: transparent;
     width: 150px;
     height: 150px;
+    transition: 0.2s;
 
     &:last-child{
-        background-color: green;
+        position: absolute;
+        bottom: 0;
+        background-color: transparent;
     }
 }
 .items > div{
-    background-color: #85D109;
-    width: 80%;
-    height: 80%;
+    background-color: transparent;
+    width: 60%;
+    height: 60%;
     position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
-.logo{
-    width: 90% !important;
-    height: 90% !important;
+.items > div > p{
+    text-align: center;
 }
-
+.items:hover{
+    background-color: #00000015;
+}
+.logo{
+    width: 75% !important;
+    height: 75% !important;
+}
+.logout{
+    transform: rotate();
+}
 
 }
 
@@ -85,6 +99,9 @@ body {
 
 // ******************************************************************** MEDIA QUERY
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1250px) {
+    body{
+        background-color: #000000;
+    }
 }
 
