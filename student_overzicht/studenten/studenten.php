@@ -41,10 +41,10 @@ require 'config.php';
         </tr>
         <?php
         $sql = "SELECT CONCAT(p.Voornaam, ' ', p.`t.v.`, ' ', p.Achternaam) AS HeleNaam, p.Geslacht, p.StudentID, i.Naam AS IntakeNaam, o.Naam AS OpdrachtNaam, p.Gesprek_Software_Development_YN, s.Score
-FROM Persoon_inschrijving p
-JOIN Intake i ON i.Naam = i.Naam
-JOIN Score s ON s.Score = s.Score
-JOIN Opdracht o ON o.OpdrachtID = o.OpdrachtID";
+                FROM Persoon_inschrijving p
+                JOIN Score s ON p.StudentID = s.StudentID
+                JOIN Intake i ON s.Intake_rondeID = i.ID
+                JOIN Opdracht o ON i.OpdrachtID = o.OpdrachtID";
 
         $result = $mysqli->query($sql);
 
@@ -60,9 +60,8 @@ JOIN Opdracht o ON o.OpdrachtID = o.OpdrachtID";
                     . $row["StudentID"] . "</td><td>" . $row["IntakeNaam"] . "</td><td>" . $row["OpdrachtNaam"] . "</td><td>"
                     . $row["Gesprek_Software_Development_YN"] . "</td><td>" . $row["Score"] . "</td></tr>";
             }
-            echo "</table>";
         } else {
-            echo "0 results";
+            echo "<tr><td colspan='7'>0 results</td></tr>";
         }
         $mysqli->close();
         ?>
