@@ -12,8 +12,11 @@ $font-size-text: 16px;
 
 // colors
 
-$color-pallete-name: #fff;
-$color-pallete-name: #fff;
+$color-background: #f5f7fa;
+$color-white: #ffffff;
+$color-GLRgroen: #85d109;
+$color-dropshadow: #98989825;
+$color-letters: #000000;
 
 // ******************************************************************** GLOBAL
 
@@ -31,6 +34,92 @@ body {
     width: 100%;
     height: 100%;
     background-color: #fff;
+}
+
+// ******************************************************************** ...
+
+#main-content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#page-background {
+    width: 30%;
+    height: 100%;
+    background-color: $color-GLRgroen;
+
+    position: absolute;
+    z-index: 0;
+}
+
+#login-box {
+    width: 88%;
+    height: 80%;
+
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 32px 0px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    #login-box-left {
+        background-image: url("/assets/images/backgroundGroen.png");
+        background-position: left;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        width: 27.25%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 60%;
+        }
+    }
+
+    #login-box-right {
+        width: 72.75%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        #welcome-message {
+            text-align: center;
+            margin-bottom: 10%;
+            #titel {
+                color: $color-GLRgroen;
+                font-size: 70px;
+            }
+
+            #info {
+                color: $color-GLRgroen;
+                font-size: 20px;
+            }
+        }
+
+        #input-fields {
+            #username {
+            }
+
+            #password {
+            }
+
+            #login-button {
+            }
+        }
+    }
 }
 
 // ******************************************************************** ...
