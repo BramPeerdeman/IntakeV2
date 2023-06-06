@@ -49,4 +49,8 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+.navbar .logo {
+  width: 90% !important;
+  height: 90% !important;
 }/*# sourceMappingURL=navbar.css.map */

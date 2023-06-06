@@ -61,7 +61,6 @@ body {
 
     &:last-child{
         background-color: green;
-
     }
 }
 .items > div{
@@ -72,6 +71,10 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+.logo{
+    width: 90% !important;
+    height: 90% !important;
 }
 
 
