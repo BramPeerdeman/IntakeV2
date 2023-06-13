@@ -50,7 +50,7 @@
         <!-- STUDENTEN LIJST -->
         <div id="content">
             <div id="zoeken-en-filter">
-            <input type="text" id="zoeken" name="search" placeholder="Zoeken">
+            <input type="text" id="zoeken" name="search" placeholder="Zoeken...">
             <form method="GET" action="">
                 <select name="filter" id="filter">
                     <option value="naam" <?php if(isset($_GET['filter']) && $_GET['filter']==='naam' ) echo ' selected'
@@ -74,28 +74,34 @@
             </form>
         </div>
             <br>
-            <table id="student-table">
-                <tr>
-                    <th>naam</th>
-                    <th>geslacht</th>
-                    <th>id</th>
-                    <th>intake</th>
-                    <th>opdracht</th>
-                    <th>beoordeeld</th>
-                    <th>score</th>
-                </tr>
-                <div id="student">
-                <tr>
-                    <td>Malik Khadje</td>
-                    <td>M</td>
-                    <td>1234567890</td>
-                    <td>intake-2023</td>
-                    <td>flowchart opdr 1.</td>
-                    <td>N</td>
-                    <td>60/100</td>
-                    <td>view</td>
-                </tr>
-                </div>
+            <ul class="responsive-table">
+                <li class="table-header">
+                  <div class="col col-1">naam</div>
+                  <div class="col col-2">geslacht</div>
+                  <div class="col col-3">id</div>
+                  <div class="col col-4">intake</div>
+                  <div class="col col-5">opdracht</div>
+                  <div class="col col-6">beoordeeld</div>
+                  <div class="col col-7">score</div>
+                  <div class="col col-8">details</div>
+                </li>
+                <li class="table-row">
+                  <div class="col col-1" data-label="naam">Malik Khadje</div>
+                  <hr>
+                  <div class="col col-2" data-label="geslacht">M</div>
+                  <hr>
+                  <div class="col col-3" data-label="id">1234567890</div>
+                  <hr>
+                  <div class="col col-4" data-label="intake">intake-2023</div>
+                  <hr>
+                  <div class="col col-5" data-label="opdracht">flowchart opdr 1.</div>
+                  <hr>
+                  <div class="col col-6" data-label="beoordeeld">N</div>
+                  <hr>
+                  <div class="col col-7" data-label="score">60/100</div>
+                  <hr>
+                  <div class="col col-8" data-label="details"><button>details</button></div>
+                </li>
         </div>
     </div>
     <script src="../js/navbar.js"></script>
