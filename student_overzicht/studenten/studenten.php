@@ -8,7 +8,7 @@ include 'config.php';
 
 <head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    
-<title>Intake Overzicht</title>
+<title>Studenten Overzicht</title>
     <style>
         table {
             border-collapse: collapse;

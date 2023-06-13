@@ -25,12 +25,13 @@ require 'config.php';
 <html lang="en" dir="ltr">
 	<head> 
 		<meta charset="utf-8">
-		<title>Student Importeren</title>
+		<title>Student Toevoegen</title>
 	</head>
 	<body>
 		<form class="" action="" method="post" enctype="multipart/form-data">
-			<input type="file" name="excel" required value="">
-			<button type="submit" name="import">Importeer</button>
+			<input type="file" name="excel" required value=""><br>
+            <a href="Intake_Ronde_Velden.xlsx" target="_blank">Voorbeeld bestand</a><br>
+			<button type="submit" name="import">Toevoegen</button>
 		</form>
 		<?php
 if(isset($_POST["import"])){
@@ -74,27 +75,22 @@ if(isset($_POST["import"])){
         $Reden_Gesprek_BOA = $row[11];
         $Definitief_advies = $row[12];
         $Opmerkingen = $row[13];
-        $Created = $row[14];
-        $Update = $row[15];
-        $Deleted = $row[16];
-        $Created_By = $row[17];
-        $Updated_By = $row[18];
 
-        $query = "INSERT INTO Persoon_inschrijving (StudentID, Voornaam, `t.v.`, Achternaam, `Geb.datum`, `E-mailadres`, Geslacht, Datum, `Gesprek_Software_Development_YN`, `Reden_Gesprek_SoftwareDevelopment`, `Gesprek_BOA_YN`, `Reden_Gesprek_BOA`, Definitief_advies, Opmerkingen, Created, Update, Deleted, Created_By, Updated_By) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO Persoon_inschrijving (StudentID, Voornaam, `t.v.`, Achternaam, `Geb.datum`, `E-mailadres`, Geslacht, Datum, `Gesprek_Software_Development_YN`, `Reden_Gesprek_SoftwareDevelopment`, `Gesprek_BOA_YN`, `Reden_Gesprek_BOA`, Definitief_advies, Opmerkingen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $mysqli->prepare($query);
-        $stmt->bind_param("sssssssssssssssssss", $StudentID, $Voornaam, $t_v, $Achternaam, $Geb_datum, $E_mailadres, $Geslacht, $Datum, $Gesprek_Software_Development_YN, $Reden_Gesprek_SoftwareDevelopment, $Gesprek_BOA_YN, $Reden_Gesprek_BOA, $Definitief_advies, $Opmerkingen, $Created, $Update, $Deleted, $Created_By, $Updated_By);
+        $stmt->bind_param("ssssssssssssss", $StudentID, $Voornaam, $t_v, $Achternaam, $Geb_datum, $E_mailadres, $Geslacht, $Datum, $Gesprek_Software_Development_YN, $Reden_Gesprek_SoftwareDevelopment, $Gesprek_BOA_YN, $Reden_Gesprek_BOA, $Definitief_advies, $Opmerkingen);
 
         if ($stmt->execute()) {
-            echo "Record imported successfully<br>";
+            echo "Student successvol toegevoegd aan de database!<br>";
         } else {
-            echo "Error importing record: " . $stmt->error . "<br>";
+            echo "Error met het importeren van een student: " . $stmt->error . "<br>";
         }
 
         $stmt->close();
     }
 
     echo "<script>
-        alert('Succesfully Imported');
+        alert('Student successvol toegevoegd aan de database!');
         document.location.href = '';
         </script>";
 }
