@@ -81,16 +81,16 @@ if(isset($_POST["import"])){
         $stmt->bind_param("ssssssssssssss", $StudentID, $Voornaam, $t_v, $Achternaam, $Geb_datum, $E_mailadres, $Geslacht, $Datum, $Gesprek_Software_Development_YN, $Reden_Gesprek_SoftwareDevelopment, $Gesprek_BOA_YN, $Reden_Gesprek_BOA, $Definitief_advies, $Opmerkingen);
 
         if ($stmt->execute()) {
-            echo "Record imported successfully<br>";
+            echo "Student successvol toegevoegd aan de database!<br>";
         } else {
-            echo "Error importing record: " . $stmt->error . "<br>";
+            echo "Error met het importeren van een student: " . $stmt->error . "<br>";
         }
 
         $stmt->close();
     }
 
     echo "<script>
-        alert('Succesfully Imported');
+        alert('Student successvol toegevoegd aan de database!');
         document.location.href = '';
         </script>";
 }
