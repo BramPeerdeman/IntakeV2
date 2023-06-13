@@ -25,7 +25,7 @@ require 'config.php';
 <html lang="en" dir="ltr">
 	<head> 
 		<meta charset="utf-8">
-		<title>Student Importeren</title>
+		<title>Student Toevoegen</title>
 	</head>
 	<body>
 		<form class="" action="" method="post" enctype="multipart/form-data">
