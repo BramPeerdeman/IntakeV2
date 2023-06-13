@@ -42,8 +42,9 @@ body {
 // ******************************************************************** NAVBAR
 
 .navbar{
+    flex-grow: 1;
     background-color: $color-GLRgroen;
-    width: 150px;
+    max-width: 150px;
     height: 100vh;
 
 

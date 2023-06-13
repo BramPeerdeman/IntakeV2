@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,32 +11,94 @@
     <link rel="stylesheet" href="../css/studentenLijst/studentenLijst.css">
     <link rel="stylesheet" href="../css/studentenLijst/studentenLijst.scss">
 </head>
+
 <body>
     <!-- NAVBAR BEGIN -->
     <div class="navbar">
         <div class="items itemsLogo">
-            <div class="logo"><img src="../assets/icons/glrLogoTrans.png" alt="GLR logo" width="100%" height="100%"></div>
+            <div class="logo"><img src="../assets/icons/glrLogoTrans.png" alt="GLR logo" width="100%" height="100%">
+            </div>
         </div>
         <div class="items itemsStudent">
-            <div class="studenten"><img src="../assets/icons/studentenIcon.png" alt="student Icon" width="100%" height="100%"><p>studenten</p></div>
+            <div class="studenten"><img src="../assets/icons/studentenIcon.png" alt="student Icon" width="100%"
+                    height="100%">
+                <p>studenten</p>
+            </div>
         </div>
         <div class="items itemsOpdracht">
-            <div class="opdrachten"><img src="../assets/icons/opdrachtIcon.png" alt="opdrachten Icon" width="100%" height="100%"><p>opdrachten</p></div>
+            <div class="opdrachten"><img src="../assets/icons/opdrachtIcon.png" alt="opdrachten Icon" width="100%"
+                    height="100%">
+                <p>opdrachten</p>
+            </div>
         </div>
         <div class="items itemsIntake">
-            <div class="intake"><img src="../assets/icons/intakeIcon.png" alt="intake Icon" width="100%" height="100%"><p>intake</p></div>
+            <div class="intake"><img src="../assets/icons/intakeIcon.png" alt="intake Icon" width="100%" height="100%">
+                <p>intake</p>
+            </div>
         </div>
         <hr class="navbarLine">
         <div class="items itemsLogout">
-            <div class="logout"><img class="logoutImage" src="../assets/icons/logoutIcon.png" alt="logout Icon" width="100%" height="100%"><p>log uit</p></div>
+            <div class="logout"><img class="logoutImage" src="../assets/icons/logoutIcon.png" alt="logout Icon"
+                    width="100%" height="100%">
+                <p>log uit</p>
+            </div>
         </div>
     </div>
     <!-- NAVBAR END -->
-
-    <!-- STUDENTEN LIJST -->
-    <table>
-        
-    </table>
+    <div id="main-content">
+        <div id="tab-nav"></div>
+        <!-- STUDENTEN LIJST -->
+        <div id="content">
+            <div id="zoeken-en-filter">
+            <input type="text" id="zoeken" name="search" placeholder="Zoeken">
+            <form method="GET" action="">
+                <select name="filter" id="filter">
+                    <option value="naam" <?php if(isset($_GET['filter']) && $_GET['filter']==='naam' ) echo ' selected'
+                        ; ?>
+                        Naam</option>
+                    <option value="geslacht" <?php if(isset($_GET['filter']) && $_GET['filter']==='geslacht' )
+                        echo ' selected' ; ?>Geslacht</option>
+                    <option value="id" <?php if(isset($_GET['filter']) && $_GET['filter']==='id' ) echo ' selected' ; ?>
+                        ID
+                    </option>
+                    <option value="intake" <?php if(isset($_GET['filter']) && $_GET['filter']==='intake' )
+                        echo ' selected' ; ?>Intake</option>
+                    <option value="opdracht" <?php if(isset($_GET['filter']) && $_GET['filter']==='opdracht' )
+                        echo ' selected' ; ?>Opdracht</option>
+                    <option value="beoordeeld" <?php if(isset($_GET['filter']) && $_GET['filter']==='beoordeeld' )
+                        echo ' selected' ; ?>Beoordeeld</option>
+                    <option value="score" <?php if(isset($_GET['filter']) && $_GET['filter']==='score' )
+                        echo ' selected' ; ?>Score</option>
+                </select>
+                <input type="submit" value="Filter toevoegen" id="filter-submit">
+            </form>
+        </div>
+            <br>
+            <table id="student-table">
+                <tr>
+                    <th>naam</th>
+                    <th>geslacht</th>
+                    <th>id</th>
+                    <th>intake</th>
+                    <th>opdracht</th>
+                    <th>beoordeeld</th>
+                    <th>score</th>
+                </tr>
+                <div id="student">
+                <tr>
+                    <td>Malik Khadje</td>
+                    <td>M</td>
+                    <td>1234567890</td>
+                    <td>intake-2023</td>
+                    <td>flowchart opdr 1.</td>
+                    <td>N</td>
+                    <td>60/100</td>
+                    <td>view</td>
+                </tr>
+                </div>
+        </div>
+    </div>
     <script src="../js/navbar.js"></script>
 </body>
+
 </html>
