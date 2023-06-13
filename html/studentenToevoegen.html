@@ -59,7 +59,7 @@
             </div>
             <div id="tabs">
                 <p>Studenten lijst</p>
-                <p>Toevoegen</p>
+                <p id="current-page">Toevoegen</p>
             </div>
         </div>
 
@@ -68,36 +68,45 @@
                 <h1>Toevoegen</h1>
                 <div id="box-toevoegen" class="box">
                     <div id="naam">
-                        <p class="titel"></p>
+                        <p class="titel">Naam</p>
                         <input type="text" class="input-box">
                     </div>
-                    <div id="geboortedatum">
-                        <p class="titel"></p>
-                        <input type="text" class="input-box">
-                    </div>
-                    <div id="geslacht">
-                        <p class="titel"></p>
-                        <input type="text" class="input-box">
+                    <div id="toevoeg-wrapper">
+                        <div id="geboortedatum">
+                            <p class="titel">Geboortedatum</p>
+                            <input type="date" class="input-box" id="geboortedatum-input">
+                        </div>
+                        <div id="geslacht">
+                            <p class="titel">Geslacht</p>
+                            <select name="geslacht" class="input-box" id="geslacht-input">
+                                <option value=""></option>
+                                <option value="man">Man</option>
+                                <option value="vrouw">vrouw</option>
+                                <option value="anders">Anders</option>
+                            </select>
+                            <!-- <input type="" class="input-box" id="geslacht-input"> -->
+                        </div>
                     </div>
                     <div id="email">
-                        <p class="titel"></p>
+                        <p class="titel">E-mail</p>
                         <input type="text" class="input-box">
                     </div>
                     <button class="btn-toevoeg">Toevoegen</button>
                 </div>
             </div>
+
             <div id="importeren">
-                <h1>importeren</h1>
-                <div id="box-toevoegen" class="box">
+                <h1>Importeren</h1>
+                <div id="box-importeren" class="box">
                     <p>Voeg excel bestanden toe</p>
                     <p id="voorbeeld-bestand">Voorbeeld bestand</p>
                     <div id="drag-drop">
                         <h2 id="drag-name">Drag & Drop</h2>
                         <h3 id="of-name">OF</h3>
-                        <button id="selecteer-bestand">Selecteer bestand</button>
+                        <button id="selecteer-bestand" class="btn-toevoeg">Selecteer bestand</button>
                     </div>
                     <hr id="scheidlijn">
-                    <div id="bestanden"></div>
+                    <div id="bestanden">Studenten2023.xls</div>
                     <button class="btn-toevoeg">Toevoegen</button>
                 </div>
 

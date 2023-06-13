@@ -21,6 +21,14 @@ body {
   background-color: #F5F7FA;
 }
 
+::-moz-selection {
+  background: #85D109;
+}
+
+::selection {
+  background: #85D109;
+}
+
 #main-content {
   display: flex;
   flex-grow: 2;

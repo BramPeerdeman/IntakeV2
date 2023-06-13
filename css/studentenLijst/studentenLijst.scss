@@ -40,6 +40,10 @@ body {
     background-color: $color-background;
 }
 
+::selection{
+    background: $color-GLRgroen;
+}
+
 // ******************************************************************** MAINCONTENT
 #main-content {
     display: flex;

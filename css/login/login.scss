@@ -36,6 +36,11 @@ body {
     background-color: #fff;
 }
 
+::selection{
+    background: $color-GLRgroen;
+}
+
+
 // ******************************************************************** ...
 
 #main-content {
