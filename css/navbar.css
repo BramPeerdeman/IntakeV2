@@ -66,10 +66,4 @@ body {
 }
 .navbar .logout {
   transform: rotate();
-}
-
-@media screen and (max-width: 1250px) {
-  body {
-    background-color: #000000;
-  }
 }/*# sourceMappingURL=navbar.css.map */
