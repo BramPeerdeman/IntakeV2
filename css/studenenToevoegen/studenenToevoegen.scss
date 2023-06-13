@@ -1,0 +1,52 @@
+@font-face {
+    font-family: face;
+    src: url(../);
+}
+
+// ******************************************************************** VARIABLES
+
+// font
+
+$font-size-titel: 30px;
+$font-size-text: 16px;
+
+// colors
+
+$color-background: #f5f7fa;
+$color-white: #ffffff;
+$color-GLRgroen: #85d109;
+$color-dropshadow: #98989825;
+$color-letters: #000000;
+
+// ******************************************************************** GLOBAL
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+// ******************************************************************** ...
+
+#main-content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+// ******************************************************************** ...
+
+// ******************************************************************** ...
+
+@media screen and (max-width: 600px) {
+}

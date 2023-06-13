@@ -1,1 +1,25 @@
-/*# sourceMappingURL=studenenToevoegen.css.map */
+@font-face {
+  font-family: face;
+  src: url(../);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+#main-content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}/*# sourceMappingURL=studenenToevoegen.css.map */
