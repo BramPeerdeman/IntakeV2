@@ -135,7 +135,6 @@ include 'config.php';
                 // Set the sort parameter for the ID filter to toggle the sorting order
                 $sortParam = $filter === 'id' && $sortOrder === 'ASC' ? 'desc' : 'asc';
                 $filterUrl = $_SERVER['PHP_SELF'] . '?filter=' . $filter . '&sort=' . $sortParam;
-                echo "<a href=\"$filterUrl\">Sort ID</a>";
             }
         }
 
