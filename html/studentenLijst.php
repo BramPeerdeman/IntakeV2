@@ -65,7 +65,7 @@ include 'config.php';
         <!-- STUDENTEN LIJST -->
         <div id="content">
             <div id="zoeken-en-filter">
-                <input type="text" id="zoeken" name="search" placeholder="Zoeken...">
+                <input type="text" id="search" name="search" placeholder="Zoeken...">
                 <form method="GET" action="">
                     <select name="filter" id="filter">
                         <option value="naam" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'naam')
@@ -73,7 +73,7 @@ include 'config.php';
                         <option value="geslacht" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'geslacht')
                             echo ' selected'; ?>>Geslacht</option>
                         <option value="id" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'id')
-                            echo ' selected'; ?>?? ; ?? ID> </option>
+                            echo ' selected'; ?>?? ; ?? ID>ID</option>
                         <option value="intake" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'intake')
                             echo ' selected';?>> Intake</option>
                         <option value="opdracht" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'opdracht')
@@ -149,6 +149,32 @@ include 'config.php';
         ?>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    <script>
+        $(document).ready(function() {
+            $('#search').on('input', function() {
+                var filter = $(this).val().toUpperCase();
+                var rows = $('.responsive-table .table-row');
+
+                rows.each(function() {
+                    var cells = $(this).find('.col');
+                    var visible = false;
+
+                    cells.each(function() {
+                        if ($(this).text().toUpperCase().indexOf(filter) > -1) {
+                            visible = true;
+                            return false; // Break the loop
+                        }
+                    });
+
+                    $(this).toggle(visible);
+                });
+            });
+        });
+    </script>
+    </script>
     <script src="../js/navbar.js"></script>
 </body>
 
