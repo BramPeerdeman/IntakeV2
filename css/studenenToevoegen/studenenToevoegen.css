@@ -19,7 +19,6 @@ body {
   background-color: #f5f7fa;
   display: flex;
 }
-
 ::-moz-selection {
   background: #85d109;
 }
@@ -59,6 +58,11 @@ body {
   border-bottom: 2px solid lightgray;
   display: flex;
 }
+
+a {
+  color: black;
+}
+
 #tab-nav #tabs p {
   align-self: center;
   font-size: 18px;
@@ -188,6 +192,7 @@ body {
 }
 #content #importeren #box-importeren #voorbeeld-bestand {
   font-weight: bold;
+  color: black;
   text-decoration: underline;
   margin-bottom: 20px;
 }
@@ -202,24 +207,55 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
 }
-#content #importeren #box-importeren #drag-drop #drag-name {
+#content #importeren #box-importeren #drag-drop #file-input {
   width: 100%;
-  font-weight: 600;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px;
 }
-#content #importeren #box-importeren #drag-drop #of-name {
-  font-size: 15px;
-  margin: 20px 0px;
-  font-weight: 600;
-}
-#content #importeren #box-importeren #drag-drop #selecteer-bestand {
-  width: 80%;
+#content #importeren #box-importeren #drag-drop #file-input::-webkit-file-upload-button {
+  width: 60%;
   height: 40px;
   color: white;
   font-size: 15px;
   font-weight: bold;
   align-self: center;
+  background-color: #85d109;
+  border: none;
+  border-radius: 5px;
+  height: 60px;
+  margin-top: 5%;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#content #importeren #box-importeren #drag-drop #file-input::-webkit-file-upload-button:hover {
+  transform: scale(1.05);
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+#content #importeren #box-importeren #drag-drop #drag-name {
+  width: 100%;
+  font-weight: 600;
+  position: absolute;
+  top: 15%;
+}
+#content #importeren #box-importeren #drag-drop #of-name {
+  font-size: 15px;
+  margin: 20px 0px 0px 0px;
+  font-weight: 600;
+  position: absolute;
+  top: 25%;
 }
 #content #importeren #box-importeren #scheidlijn {
   width: 90%;
