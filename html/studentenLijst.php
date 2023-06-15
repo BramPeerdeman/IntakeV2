@@ -17,6 +17,198 @@ include 'config.php';
 </head>
 
 <body>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,300&display=swap");
+@font-face {
+  font-family: face;
+  src: url(../);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
+html,
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #F5F7FA;
+}
+
+::-moz-selection {
+  background: #85D109;
+}
+
+::selection {
+  background: #85D109;
+}
+
+#main-content {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+}
+
+a {
+  color: black;
+}
+
+#tab-nav {
+  width: 100%;
+  height: 140px;
+}
+#tab-nav #tab-title {
+  width: 100%;
+  height: 70px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+#tab-nav #tab-title p {
+  font-size: 25px;
+}
+#tab-nav #tabs {
+  width: 100%;
+  height: 70px;
+  padding: 20px 40px;
+  border-bottom: 2px solid lightgray;
+  display: flex;
+}
+#tab-nav #tabs p {
+  align-self: center;
+  font-size: 18px;
+  margin-right: 35px;
+  font-weight: lighter;
+}
+#tab-nav #tabs #current-page {
+  color: #85D109;
+  font-weight: bold;
+  position: relative;
+}
+#tab-nav #tabs #current-page::after {
+  content: "";
+  position: absolute;
+  top: 43px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  border-bottom: 3px solid #85D109;
+}
+
+#zoeken-en-filter {
+  display: flex;
+}
+
+#zoeken {
+  position: relative;
+  margin: 30px 0 0 30px;
+  text-align: center;
+  border: none;
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(152, 152, 152, 0.1450980392);
+}
+
+#filter,
+#filter-submit {
+  position: relative;
+  height: 30px;
+  margin: 35px 0 0 0;
+  left: 30px;
+  box-shadow: 0px 0px 10px rgba(152, 152, 152, 0.1450980392);
+}
+
+#filter {
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+#filter-submit {
+  border: none;
+  border-radius: 5px;
+  left: 40px;
+  width: 120px;
+  background-color: #85D109;
+}
+
+.responsive-table {
+  position: relative;
+  margin: 10px 30px;
+  text-align: center;
+}
+.responsive-table li {
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.responsive-table .table-header {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.responsive-table .table-row {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px 0px rgba(152, 152, 152, 0.1450980392);
+}
+.responsive-table .col-1 {
+  flex-basis: 20%;
+}
+.responsive-table .col-2 {
+  flex-basis: 5%;
+}
+.responsive-table .col-3 {
+  flex-basis: 15%;
+}
+.responsive-table .col-4 {
+  flex-basis: 15%;
+}
+.responsive-table .col-5 {
+  flex-basis: 20%;
+}
+.responsive-table .col-6 {
+  flex-basis: 5%;
+}
+.responsive-table .col-7 {
+  flex-basis: 10%;
+}
+.responsive-table .col-8 {
+  flex-basis: 10%;
+}
+@media all and (max-width: 1000px) {
+  .responsive-table .table-header {
+    display: none;
+  }
+  .responsive-table li {
+    display: block;
+  }
+  .responsive-table .col {
+    flex-basis: 100%;
+  }
+  .responsive-table .col {
+    display: flex;
+    padding: 10px 0;
+  }
+  .responsive-table .col:before {
+    color: #6C7A89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
+}/*# sourceMappingURL=studentenLijst.css.map */
+    </style>
     <!-- NAVBAR BEGIN -->
     <div class="navbar">
         <div class="items itemsLogo">
