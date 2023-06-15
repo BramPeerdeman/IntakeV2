@@ -152,27 +152,27 @@ include 'config.php';
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#search').on('input', function() {
-                var filter = $(this).val().toUpperCase();
-                var rows = $('ul li');
+    $(document).ready(function() {
+        $('#search').on('input', function() {
+            var filter = $(this).val().toUpperCase();
+            var rows = $('.table-row');
 
-                rows.each(function() {
-                    var cells = $(this).find('li');
-                    var visible = false;
+            rows.each(function() {
+                var cells = $(this).find('.col');
+                var visible = false;
 
-                    cells.each(function() {
-                        if ($(this).text().toUpperCase().indexOf(filter) > -1) {
-                            visible = true;
-                            return false; // Break the loop
-                        }
-                    });
-
-                    $(this).toggle(visible);
+                cells.each(function() {
+                    if ($(this).text().toUpperCase().indexOf(filter) > -1) {
+                        visible = true;
+                        return false; // Break the loop
+                    }
                 });
+
+                $(this).toggle(visible);
             });
         });
-    </script>
+    });
+</script>
     <script src="../js/navbar.js"></script>
 </body>
 
