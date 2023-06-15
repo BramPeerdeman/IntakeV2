@@ -62,7 +62,8 @@ if(isset($_POST["import"])){
 
         if ($stmt->execute()) {
             echo "Student successvol toegevoegd aan de database!<br>";
-        } else {
+        } 
+        else {
             echo "Error met het importeren van een student: " . $stmt->error . "<br>";
         }
 
@@ -71,7 +72,6 @@ if(isset($_POST["import"])){
 
     echo "<script>
         alert('Student successvol toegevoegd aan de database!');
-        document.location.href = '';
         </script>";
 }
 ?>

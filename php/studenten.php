@@ -137,7 +137,7 @@ include 'config.php';
             while ($row = $result->fetch_assoc()) {
                 echo "<tr><td>" . $row["HeleNaam"] . "</td><td>" . $row["Geslacht"] . "</td><td>"
                     . $row["StudentID"] . "</td><td>" . $row["IntakeNaam"] . "</td><td>" . $row["OpdrachtNaam"] . "</td><td>"
-                    . $row["Gesprek_Software_Development_YN"] . "</td><td>" . $row["Score"] . "</td>" . "<td><button class='userinfo' data-id='" . $row['StudentID'] . "'>Info</button></td>                    </tr>";
+                    . $row["Gesprek_Software_Development_YN"] . "</td><td>" . $row["Score"] . "</td>" . "<td><button class='userinfo' data-id='" . $row['StudentID'] . "'>Info</button></td>   </tr>";
             }
         } else {
             echo "<tr><td colspan='7'>0 results</td></tr>";
