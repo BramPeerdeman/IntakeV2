@@ -140,9 +140,9 @@ include 'config.php';
         if ($result->num_rows > 0) {
             // Output data of each row
             while ($row = $result->fetch_assoc()) {
-                echo "<li class='table-row'><div class='col col-1'>" . $row["HeleNaam"] . "</div><div class='col col-2'>" . $row["Geslacht"] . "</div><div class='col col-3'>"
-                    . $row["StudentID"] . "</div><div class='col col-4'>" . $row["IntakeNaam"] . "</div><div class='col col-5'>" . $row["OpdrachtNaam"] . "</div><div class='col col-6'>"
-                    . $row["Gesprek_Software_Development_YN"] . "</div><div class='col col-7'>" . $row["Score"] . "</div>" . "<div class='col col-8'><button class='userinfo' data-id='" . $row['StudentID'] . "'>Info</button></div></li>";
+                echo "<li class='table-row'><div class='col col-1'>" . $row["HeleNaam"] . "</div><hr><div class='col col-2'>" . $row["Geslacht"] . "</div><hr><div class='col col-3'>"
+                    . $row["StudentID"] . "</div><hr><div class='col col-4'>" . $row["IntakeNaam"] . "</div><hr><div class='col col-5'>" . $row["OpdrachtNaam"] . "</div><hr><div class='col col-6'>"
+                    . $row["Gesprek_Software_Development_YN"] . "</div><hr><div class='col col-7'>" . $row["Score"] . "</div><hr><div class='col col-8'><button class='userinfo' data-id='" . $row['StudentID'] . "'>Info</button></div></li>";
             }
         } else {
             echo "<li><div colspan='7'>0 results</div></li>";
