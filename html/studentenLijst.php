@@ -58,8 +58,8 @@ include 'config.php';
                 <p>Studenten</p>
             </div>
             <div id="tabs">
-                <p id="current-page">Studenten lijst</p>
-                <p><a href="studentenToevoegen.html">Toevoegen</a></p>
+                <p id="current-page"><a href="../html/studentenLijst.php">Studenten lijst</a></p>
+                <p><a href="../html/studentenToevoegen.html">Toevoegen</a></p>
             </div>
         </div>
         <!-- STUDENTEN LIJST -->
