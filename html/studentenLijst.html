@@ -46,69 +46,72 @@
     </div>
     <!-- NAVBAR END -->
     <div id="main-content">
+        
         <div id="tab-nav">
             <div id="tab-title">
                 <p>Studenten</p>
             </div>
             <div id="tabs">
-                <p id="current-page">Studenten lijst</p>
-                <p><a href="studentenToevoegen.html">Toevoegen</a></p>
+                <p id="current-page"><a href="../html/studentenLijst.html">Studenten lijst</a></p>
+                <p><a href="../html/studentenToevoegen.html">Toevoegen</a></p>
             </div>
         </div>
+
         <!-- STUDENTEN LIJST -->
         <div id="content">
             <div id="zoeken-en-filter">
-            <input type="text" id="zoeken" name="search" placeholder="Zoeken...">
-            <form method="GET" action="">
-                <select name="filter" id="filter">
-                    <option value="naam" <?php if(isset($_GET['filter']) && $_GET['filter']==='naam' ) echo ' selected'
-                        ; ?>
-                        Naam</option>
-                    <option value="geslacht" <?php if(isset($_GET['filter']) && $_GET['filter']==='geslacht' )
-                        echo ' selected' ; ?>Geslacht</option>
-                    <option value="id" <?php if(isset($_GET['filter']) && $_GET['filter']==='id' ) echo ' selected' ; ?>
-                        ID
-                    </option>
-                    <option value="intake" <?php if(isset($_GET['filter']) && $_GET['filter']==='intake' )
-                        echo ' selected' ; ?>Intake</option>
-                    <option value="opdracht" <?php if(isset($_GET['filter']) && $_GET['filter']==='opdracht' )
-                        echo ' selected' ; ?>Opdracht</option>
-                    <option value="beoordeeld" <?php if(isset($_GET['filter']) && $_GET['filter']==='beoordeeld' )
-                        echo ' selected' ; ?>Beoordeeld</option>
-                    <option value="score" <?php if(isset($_GET['filter']) && $_GET['filter']==='score' )
-                        echo ' selected' ; ?>Score</option>
-                </select>
-                <input type="submit" value="Filter toevoegen" id="filter-submit">
-            </form>
-        </div>
+                <input type="text" id="zoeken" name="search" placeholder="Zoeken...">
+                <form method="GET" action="">
+                    <select name="filter" id="filter">
+                        <option value="naam" <?php if(isset($_GET['filter']) && $_GET['filter']==='naam' )
+                            echo ' selected' ; ?>
+                            Naam</option>
+                        <option value="geslacht" <?php if(isset($_GET['filter']) && $_GET['filter']==='geslacht' )
+                            echo ' selected' ; ?>Geslacht</option>
+                        <option value="id" <?php if(isset($_GET['filter']) && $_GET['filter']==='id' ) echo ' selected'
+                            ; ?>
+                            ID
+                        </option>
+                        <option value="intake" <?php if(isset($_GET['filter']) && $_GET['filter']==='intake' )
+                            echo ' selected' ; ?>Intake</option>
+                        <option value="opdracht" <?php if(isset($_GET['filter']) && $_GET['filter']==='opdracht' )
+                            echo ' selected' ; ?>Opdracht</option>
+                        <option value="beoordeeld" <?php if(isset($_GET['filter']) && $_GET['filter']==='beoordeeld' )
+                            echo ' selected' ; ?>Beoordeeld</option>
+                        <option value="score" <?php if(isset($_GET['filter']) && $_GET['filter']==='score' )
+                            echo ' selected' ; ?>Score</option>
+                    </select>
+                    <input type="submit" value="Filter toevoegen" id="filter-submit">
+                </form>
+            </div>
             <br>
             <ul class="responsive-table">
                 <li class="table-header">
-                  <div class="col col-1">naam</div>
-                  <div class="col col-2">geslacht</div>
-                  <div class="col col-3">id</div>
-                  <div class="col col-4">intake</div>
-                  <div class="col col-5">opdracht</div>
-                  <div class="col col-6">beoordeeld</div>
-                  <div class="col col-7">score</div>
-                  <div class="col col-8">details</div>
+                    <div class="col col-1">naam</div>
+                    <div class="col col-2">geslacht</div>
+                    <div class="col col-3">id</div>
+                    <div class="col col-4">intake</div>
+                    <div class="col col-5">opdracht</div>
+                    <div class="col col-6">beoordeeld</div>
+                    <div class="col col-7">score</div>
+                    <div class="col col-8">details</div>
                 </li>
                 <li class="table-row">
-                  <div class="col col-1" data-label="naam">Malik Khadje</div>
-                  <hr>
-                  <div class="col col-2" data-label="geslacht">M</div>
-                  <hr>
-                  <div class="col col-3" data-label="id">1234567890</div>
-                  <hr>
-                  <div class="col col-4" data-label="intake">intake-2023</div>
-                  <hr>
-                  <div class="col col-5" data-label="opdracht">flowchart opdr 1.</div>
-                  <hr>
-                  <div class="col col-6" data-label="beoordeeld">N</div>
-                  <hr>
-                  <div class="col col-7" data-label="score">60/100</div>
-                  <hr>
-                  <div class="col col-8" data-label="details"><button>details</button></div>
+                    <div class="col col-1" data-label="naam">Malik Khadje</div>
+                    <hr>
+                    <div class="col col-2" data-label="geslacht">M</div>
+                    <hr>
+                    <div class="col col-3" data-label="id">1234567890</div>
+                    <hr>
+                    <div class="col col-4" data-label="intake">intake-2023</div>
+                    <hr>
+                    <div class="col col-5" data-label="opdracht">flowchart opdr 1.</div>
+                    <hr>
+                    <div class="col col-6" data-label="beoordeeld">N</div>
+                    <hr>
+                    <div class="col col-7" data-label="score">60/100</div>
+                    <hr>
+                    <div class="col col-8" data-label="details"><button>details</button></div>
                 </li>
         </div>
     </div>
