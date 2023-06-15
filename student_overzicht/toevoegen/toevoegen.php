@@ -51,11 +51,10 @@ if(isset($_POST["import"])){
 
     $reader = new SpreadsheetReader($targetDirectory);
 
-    // Skip the first row assuming it contains headers
     $skipFirstRow = true;
 
     foreach($reader as $key => $row){
-        // Skip the first row if it contains headers
+
         if($skipFirstRow){
             $skipFirstRow = false;
             continue;
