@@ -152,7 +152,6 @@ include 'config.php';
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    <script>
         $(document).ready(function() {
             $('#search').on('input', function() {
                 var filter = $(this).val().toUpperCase();
@@ -173,7 +172,6 @@ include 'config.php';
                 });
             });
         });
-    </script>
     </script>
     <script src="../js/navbar.js"></script>
 </body>
