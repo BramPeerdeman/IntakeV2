@@ -155,10 +155,10 @@ include 'config.php';
         $(document).ready(function() {
             $('#search').on('input', function() {
                 var filter = $(this).val().toUpperCase();
-                var rows = $('.responsive-table .table-row');
+                var rows = $('ul li');
 
                 rows.each(function() {
-                    var cells = $(this).find('.col');
+                    var cells = $(this).find('li');
                     var visible = false;
 
                     cells.each(function() {
