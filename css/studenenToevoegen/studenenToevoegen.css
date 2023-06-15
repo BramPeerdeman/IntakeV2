@@ -19,7 +19,6 @@ body {
   background-color: #f5f7fa;
   display: flex;
 }
-
 ::-moz-selection {
   background: #85d109;
 }
