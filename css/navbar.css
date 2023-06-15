@@ -20,6 +20,14 @@ body {
   background-color: #fff;
 }
 
+::-moz-selection {
+  background: #85D109;
+}
+
+::selection {
+  background: #85D109;
+}
+
 .navbar {
   flex-grow: 1;
   background-color: #85D109;

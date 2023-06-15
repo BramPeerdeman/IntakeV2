@@ -39,6 +39,10 @@ body {
     background-color: #fff;
 }
 
+::selection {
+    background: $color-GLRgroen;
+}
+
 // ******************************************************************** NAVBAR
 
 .navbar{
