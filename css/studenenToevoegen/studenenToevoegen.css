@@ -58,6 +58,11 @@ body {
   border-bottom: 2px solid lightgray;
   display: flex;
 }
+
+a {
+  color: black;
+}
+
 #tab-nav #tabs p {
   align-self: center;
   font-size: 18px;
@@ -187,6 +192,7 @@ body {
 }
 #content #importeren #box-importeren #voorbeeld-bestand {
   font-weight: bold;
+  color: black;
   text-decoration: underline;
   margin-bottom: 20px;
 }
