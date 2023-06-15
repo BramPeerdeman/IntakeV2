@@ -98,16 +98,19 @@ include 'config.php';
     </form>
     <br>
     <table>
-        <tr>
-            <th>naam</th>
-            <th>geslacht</th>
-            <th>id</th>
-            <th>intake</th>
-            <th>opdracht</th>
-            <th>beoordeeld</th>
-            <th>score</th>
-            <th>View</th>
-        </tr>
+        <ul class="responsive-table">
+            <li class="responsive-header">
+                <div class="col col1">naam</div>
+                <div class="col col2">geslacht</div>
+                <div class="col col3">id</div>
+                <div class="col col4">intake</div>
+                <div class="col col5">opdracht</div>
+                <div class="col col6">beoordeeld</div>
+                <div class="col col7">score</div>
+                <div class="col col8">details</div>
+            </li>
+            
+    </ul>
         <?php
         $sql = "SELECT CONCAT(p.Voornaam, ' ', p.`t.v.`, ' ', p.Achternaam) AS HeleNaam, p.Geslacht, p.StudentID, i.Naam AS IntakeNaam, o.Naam AS OpdrachtNaam, p.Gesprek_Software_Development_YN, s.Score
                 FROM Persoon_inschrijving p
@@ -148,12 +151,12 @@ include 'config.php';
         if ($result->num_rows > 0) {
             // Output data of each row
             while ($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["HeleNaam"] . "</td><td>" . $row["Geslacht"] . "</td><td>"
-                    . $row["StudentID"] . "</td><td>" . $row["IntakeNaam"] . "</td><td>" . $row["OpdrachtNaam"] . "</td><td>"
-                    . $row["Gesprek_Software_Development_YN"] . "</td><td>" . $row["Score"] . "</td>" . "<td><button class='userinfo' data-id='" . $row['StudentID'] . "'>Info</button></td>                    </tr>";
+                echo "<li><div class="col col-1">" . $row["HeleNaam"] . "</div><div class="col col-2">" . $row["Geslacht"] . "</div><div class="col col-3">"
+                    . $row["StudentID"] . "</div><div class="col col-4">" . $row["IntakeNaam"] . "</div><div class="col col-5">" . $row["OpdrachtNaam"] . "</div><div class="col col-6">"
+                    . $row["Gesprek_Software_Development_YN"] . "</div><div class="col col-7">" . $row["Score"] . "</div>" . "<div class="col col-8"><button class='userinfo' data-id='" . $row['StudentID'] . "'>Info</button></div></li>";
             }
         } else {
-            echo "<tr><td colspan='7'>0 results</td></tr>";
+            echo "<li><div colspan='7'>0 results</div></li>";
         }
         $mysqli->close();
         ?>
