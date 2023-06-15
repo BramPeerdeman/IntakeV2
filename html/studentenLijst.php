@@ -65,7 +65,7 @@ include 'config.php';
         <!-- STUDENTEN LIJST -->
         <div id="content">
             <div id="zoeken-en-filter">
-                <input type="text" id="search" name="search" placeholder="Zoeken...">
+                <input type="text" id="zoeken" name="search" placeholder="Zoeken...">
                 <form method="GET" action="">
                     <select name="filter" id="filter">
                         <option value="naam" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'naam')
@@ -150,10 +150,72 @@ include 'config.php';
         </div>
     </div>
 
+    <div class="modal fade" id="empModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">User Info</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- De modal -->
+        <div id="empModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <!-- Inhoud van de modale body hier -->
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+
+// INFO 
+$(document).ready(function () {
+            // Klikfunctie voor het openen van de modal
+            $('ul.responsive-table').on('click', 'button.userinfo', function () {
+                var rowData = $(this).closest('li').find('.col').map(function () {
+                    return $(this).text();
+                }).get();
+                var html = "<h4>naam: " + rowData[0] + "</h4>" +
+                    "<p>geslacht: " + rowData[1] + "</p>" +
+                    "<p>id: " + rowData[2] + "</p>" +
+                    "<p>intake: " + rowData[3] + "</p>" +
+                    "<p>opdracht: " + rowData[4] + "</p>" +
+                    "<p>beoordeeld: " + rowData[5] + "</p>" +
+                    "<p>score: " + rowData[6] + "</p>";
+                $('.modal-body').html(html);
+                $('#empModal').css('display', 'block');
+            });
+
+            // Klikfunctie voor het sluiten van de modal
+            $('.close').click(function () {
+                $('#empModal').css('display', 'none');
+            });
+
+            // Klikfunctie voor het sluiten van de modal wanneer er buiten wordt geklikt
+            $(window).click(function (event) {
+                if (event.target == document.getElementById('empModal')) {
+                    $('#empModal').css('display', 'none');
+                }
+            });
+        });
+
+
+
+
+// ZOEKEN
     $(document).ready(function() {
-        $('#search').on('input', function() {
+        $('#zoeken').on('input', function() {
             var filter = $(this).val().toUpperCase();
             var rows = $('.table-row');
 
@@ -172,6 +234,7 @@ include 'config.php';
             });
         });
     });
+
 </script>
     <script src="../js/navbar.js"></script>
 </body>
