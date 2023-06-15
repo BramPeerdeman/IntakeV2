@@ -31,7 +31,7 @@ body {
   width: 100px;
   height: 1px;
   bottom: 170px;
-  border: solid black;
+  border: solid black 1px;
   left: 25px;
 }
 .navbar .items {

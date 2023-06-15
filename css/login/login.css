@@ -111,12 +111,6 @@ body {
   font-size: 20px;
   font-weight: bold;
 }
-#login-box #login-box-right #input-fields #username:-ms-input-placeholder {
-  text-align: center;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-}
 #login-box #login-box-right #input-fields #username::placeholder {
   text-align: center;
   color: black;
@@ -138,12 +132,6 @@ body {
   border-bottom: black solid 3px;
 }
 #login-box #login-box-right #input-fields #password::-moz-placeholder {
-  text-align: center;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-}
-#login-box #login-box-right #input-fields #password:-ms-input-placeholder {
   text-align: center;
   color: black;
   font-size: 20px;
