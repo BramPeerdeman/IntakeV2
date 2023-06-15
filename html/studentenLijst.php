@@ -17,6 +17,9 @@ include 'config.php';
 </head>
 
 <body>
+    <style>
+        
+    </style>
     <!-- NAVBAR BEGIN -->
     <div class="navbar">
         <div class="items itemsLogo">
