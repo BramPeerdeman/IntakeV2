@@ -1,3 +1,7 @@
+<?php
+
+include 'config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,23 +97,55 @@
                   <div class="col col-7">score</div>
                   <div class="col col-8">details</div>
                 </li>
-                <li class="table-row">
-                  <div class="col col-1" data-label="naam">Malik Khadje</div>
-                  <hr>
-                  <div class="col col-2" data-label="geslacht">M</div>
-                  <hr>
-                  <div class="col col-3" data-label="id">1234567890</div>
-                  <hr>
-                  <div class="col col-4" data-label="intake">intake-2023</div>
-                  <hr>
-                  <div class="col col-5" data-label="opdracht">flowchart opdr 1.</div>
-                  <hr>
-                  <div class="col col-6" data-label="beoordeeld">N</div>
-                  <hr>
-                  <div class="col col-7" data-label="score">60/100</div>
-                  <hr>
-                  <div class="col col-8" data-label="details"><button>details</button></div>
-                </li>
+                <?php
+        $sql = "SELECT CONCAT(p.Voornaam, ' ', p.`t.v.`, ' ', p.Achternaam) AS HeleNaam, p.Geslacht, p.StudentID, i.Naam AS IntakeNaam, o.Naam AS OpdrachtNaam, p.Gesprek_Software_Development_YN, s.Score
+                FROM Persoon_inschrijving p
+                JOIN Score s ON p.StudentID = s.StudentID
+                JOIN Intake i ON s.Intake_rondeID = i.ID
+                JOIN Opdracht o ON i.OpdrachtID = o.OpdrachtID";
+
+        if (isset($_GET['filter'])) {
+            $filter = $_GET['filter'];
+            // Map the filter value to the corresponding column name
+            $columnMap = [
+                'naam' => 'HeleNaam',
+                'geslacht' => 'Geslacht',
+                'id' => 'StudentID',
+                'intake' => 'IntakeNaam',
+                'opdracht' => 'OpdrachtNaam',
+                'beoordeeld' => 'Gesprek_Software_Development_YN',
+                'score' => 'Score'
+            ];
+            if (isset($columnMap[$filter])) {
+                $column = $columnMap[$filter];
+                // Check if the filter is 'id' to determine the sorting order
+                $sortOrder = $filter === 'id' && isset($_GET['sort']) && $_GET['sort'] === 'desc' ? 'DESC' : 'ASC';
+                $sql .= " ORDER BY $column $sortOrder";
+                // Set the sort parameter for the ID filter to toggle the sorting order
+                $sortParam = $filter === 'id' && $sortOrder === 'ASC' ? 'desc' : 'asc';
+                $filterUrl = $_SERVER['PHP_SELF'] . '?filter=' . $filter . '&sort=' . $sortParam;
+            }
+        }
+
+        $result = $mysqli->query($sql);
+
+        if (!$result) {
+            echo "Error: " . $mysqli->error;
+            // Handle the error appropriately
+        }
+
+        if ($result->num_rows > 0) {
+            // Output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "<li><div class='col col-1'>" . $row["HeleNaam"] . "</div><div class='col col-2'>" . $row["Geslacht"] . "</div><div class='col col-3'>"
+                    . $row["StudentID"] . "</div><div class='col col-4'>" . $row["IntakeNaam"] . "</div><div class='col col-5'>" . $row["OpdrachtNaam"] . "</div><div class='col col-6'>"
+                    . $row["Gesprek_Software_Development_YN"] . "</div><div class='col col-7'>" . $row["Score"] . "</div>" . "<div class='col col-8'><button class='userinfo' data-id='" . $row['StudentID'] . "'>Info</button></div></li>";
+            }
+        } else {
+            echo "<li><div colspan='7'>0 results</div></li>";
+        }
+        $mysqli->close();
+        ?>
         </div>
     </div>
     <script src="../js/navbar.js"></script>
