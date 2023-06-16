@@ -8,46 +8,6 @@
     <title>Intake Opdrachten</title>
 </head>
 
-<div class="navbar">
-        <div class="items itemsLogo">
-            <div class="logo"><img src="../assets/icons/glrLogoTrans.png" alt="GLR logo" width="100%" height="100%">
-            </div>
-        </div>
-        <div class="items itemsStudent">
-            <div class="studenten"><img src="../assets/icons/studentenIcon.png" alt="student Icon" width="100%"
-                    height="100%">
-                <a href="../html/studentenLijst.php">
-                    <p>studenten</p>
-                </a>
-            </div>
-        </div>
-        <div class="items itemsOpdracht">
-            <div class="opdrachten"><img src="../assets/icons/opdrachtIcon.png" alt="opdrachten Icon" width="100%"
-                    height="100%">
-                <a href="#">
-                    <p>opdrachten</p>
-                </a>
-            </div>
-        </div>
-        <div class="items itemsIntake">
-            <div class="intake"><img src="../assets/icons/intakeIcon.png" alt="intake Icon" width="100%" height="100%">
-                <a href="../php/logout.php">
-                    <p>intake</p>
-                </a>
-            </div>
-        </div>
-        <hr class="navbarLine">
-        <div class="items itemsLogout">
-            <div class="logout"><a href="../php/logout.php"><img class="logoutImage"
-                        src="../assets/icons/logoutIcon.png" alt="logout Icon" width="100%" height="100%"></a>
-                <a href="../php/logout.php">
-                    <p>log uit</p>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
 <?php
     session_start();
 
