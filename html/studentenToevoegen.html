@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    
+
     <div class="navbar">
         <div class="items itemsLogo">
             <div class="logo"><img src="../assets/icons/glrLogoTrans.png" alt="GLR logo" width="100%" height="100%">
@@ -28,25 +28,33 @@
         <div class="items itemsStudent">
             <div class="studenten"><img src="../assets/icons/studentenIcon.png" alt="student Icon" width="100%"
                     height="100%">
-                <p>studenten</p>
+                <a href="../html/studentenLijst.php">
+                    <p>studenten</p>
+                </a>
             </div>
         </div>
         <div class="items itemsOpdracht">
             <div class="opdrachten"><img src="../assets/icons/opdrachtIcon.png" alt="opdrachten Icon" width="100%"
                     height="100%">
-                <p>opdrachten</p>
+                <a href="#">
+                    <p>opdrachten</p>
+                </a>
             </div>
         </div>
         <div class="items itemsIntake">
             <div class="intake"><img src="../assets/icons/intakeIcon.png" alt="intake Icon" width="100%" height="100%">
-                <p>intake</p>
+                <a href="../php/logout.php">
+                    <p>intake</p>
+                </a>
             </div>
         </div>
         <hr class="navbarLine">
         <div class="items itemsLogout">
-            <div class="logout"><a href="../php/logout.php"><img class="logoutImage" src="../assets/icons/logoutIcon.png" alt="logout Icon"
-                    width="100%" height="100%"></a>
-               <a href="../php/logout.php"><p>log uit</p></a>
+            <div class="logout"><a href="../php/logout.php"><img class="logoutImage"
+                        src="../assets/icons/logoutIcon.png" alt="logout Icon" width="100%" height="100%"></a>
+                <a href="../php/logout.php">
+                    <p>log uit</p>
+                </a>
             </div>
         </div>
     </div>
@@ -99,18 +107,19 @@
                 <h1>Importeren</h1>
                 <div id="box-importeren" class="box">
                     <p>Voeg excel bestanden toe</p>
-                    <a href="../php/excelReader/Intake_Ronde_Velden.xlsx" id="voorbeeld-bestand">Klik voor voorbeeld bestand</a>
+                    <a href="../php/excelReader/Intake_Ronde_Velden.xlsx" id="voorbeeld-bestand">Klik voor voorbeeld
+                        bestand</a>
                     <div id="drag-drop">
                         <h2 id="drag-name">Drag & Drop</h2>
                         <h3 id="of-name">OF</h3>
                         <form class="" action="../php/toevoegen.php" method="post" enctype="multipart/form-data">
-                        <input type="file" name="excel" required value="" id="file-input">
-                        
+                            <input type="file" name="excel" required value="" id="file-input">
+
                     </div>
                     <!-- <hr id="scheidlijn"> -->
                     <!-- <div id="bestanden">Studenten2023.xls</div> -->
                     <button type="submit" name="import" class="btn-toevoeg">Toevoegen</button>
-                </form>
+                    </form>
                 </div>
 
             </div>
