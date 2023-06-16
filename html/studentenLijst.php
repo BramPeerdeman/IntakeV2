@@ -103,10 +103,10 @@ include 'config.php';
         </div>
         <hr class="navbarLine">
         <div class="items itemsLogout">
-        <a href="../php/logout.php"> <div class="logout"><img class="logoutImage" src="../assets/icons/logoutIcon.png" alt="logout Icon"
-                    width="100%" height="100%">
-                <p>log uit</p>
-            </div><a>
+         <div class="logout"><a href="../php/logout.php"><img class="logoutImage" src="../assets/icons/logoutIcon.png" alt="logout Icon"
+                    width="100%" height="100%"></a>
+                    <a href="../php/logout.php"><p>log uit</p></a>
+            </div>
         </div>
     </div>
     <!-- NAVBAR END -->
