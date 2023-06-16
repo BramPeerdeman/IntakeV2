@@ -1,17 +1,6 @@
 <?php
 
 include 'config.php';
-
-
-
-// We need to use sessions, so you should always start sessions using the below code.
-session_start();
-// If the user is not logged in redirect to the login page...
-if (!isset($_SESSION['loggedin'])) {
-	header('Location: index.html');
-	exit;
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,17 +33,42 @@ if (!isset($_SESSION['loggedin'])) {
 
         .modal-content {
             background-color: #fefefe;
+            box-shadow: 20px 20px 50px 10px rgb(0, 0, 0);;
             margin: 15% auto; /* Plaatst de modal verticaal en horizontaal in het midden van het scherm */
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
+            border-radius: 5px;
         }
+
+        .userinfo {
+            background-color: white;
+            color: black;
+            border: black 1px solid;
+            border-radius: 5px;
+            padding: 5px;
+            transition: ease-in-out 0.2s;
+        }
+
+        .userinfo:hover {
+            letter-spacing: 2px;
+        }
+
+        .close {
+            background-color: white;
+            color: black;
+            border: black 1px solid;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
 
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
+            transition: ease-in-out 0.2s;
         }
 
         .close:hover,
@@ -184,7 +198,7 @@ if (!isset($_SESSION['loggedin'])) {
             while ($row = $result->fetch_assoc()) {
                 echo "<li class='table-row'><div class='col col-1'>" . $row["HeleNaam"] . "</div><hr><div class='col col-2'>" . $row["Geslacht"] . "</div><hr><div class='col col-3'>"
                     . $row["StudentID"] . "</div><hr><div class='col col-4'>" . $row["IntakeNaam"] . "</div><hr><div class='col col-5'>" . $row["OpdrachtNaam"] . "</div><hr><div class='col col-6'>"
-                    . $row["Gesprek_Software_Development_YN"] . "</div><hr><div class='col col-7'>" . $row["Score"] . "</div><hr><div class='col col-8'><button class='userinfo' data-id='" . $row['StudentID'] . "'>Info</button></div></li>";
+                    . $row["Gesprek_Software_Development_YN"] . "</div><hr><div class='col col-7'>" . $row["Score"] . "</div><hr><div class='col col-8'><button class='userinfo' data-id='" . $row['StudentID'] . "'>INFO</button></div></li>";
             }
         } else {
             echo "<li><div colspan='7'>0 results</div></li>";
@@ -198,14 +212,14 @@ if (!isset($_SESSION['loggedin'])) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">User Info</h4>
+                    <h3 class="modal-title">USER INFO</h3><br>
                     <button type="button" class="close" data-dismiss="modal">×</button>
                 </div>
                 <div class="modal-body">
                 </div>
-                <div class="modal-footer">
+                <!-- <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -253,8 +267,6 @@ $(document).ready(function () {
                 }
             });
         });
-
-
 
 
 // ZOEKEN
