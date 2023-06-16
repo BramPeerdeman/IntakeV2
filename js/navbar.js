@@ -17,27 +17,27 @@ student.addEventListener('click', () =>
 {
     //Zet hier de link naar de studenten pagina
 
-    // window.location = ""
+    window.location = "../html/studentenLijst.php"
 })
 
 opdracht.addEventListener('click', () =>
 {
     //Zet hier de link naar de opdrachten pagina
     
-    // window.location = ""
+    window.location = ""
 })
 
 intake.addEventListener('click', () =>
 {
     //Zet hier de link naar de intake pagina
     
-    // window.location = ""
+    window.location = ""
 })
 
 logout.addEventListener('click', () =>
 {
     //Zet hier de link naar de logout
     
-    // window.location = ""
+    window.location = ""
 })
 
