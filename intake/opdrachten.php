@@ -3,10 +3,8 @@
 
     include 'config.php';
 
-    $id = $_SESSION['id'];
-
-    $query_string = "SELECT * FROM Opdracht";
-    $query = mysqli_query($connessione, $query_string);
+    $query = "SELECT * FROM Opdracht";
+    // $query = mysqli_query($connessione, $query_string);
 
     //Get results
     $result = mysqli_query($mysqli, $query);
@@ -15,19 +13,6 @@
     {
         // maak een tabel aan
         echo "<table border='1px' class='table table-striped custom-table'>";
-    
-        // eerste de headers van de tabel
-        // echo "<tr>
-        // <th>Onderwerp</th>
-        // <th>Inhoud</th>
-        // <th>Begindatum</th>
-        // <th>Einddatum</th>
-        // <th>Prioriteit</th>
-        // <th>Status</th>
-        // <th>CheckID</th>
-        // <th>Verwijder</th>
-        // <th>Pas Aan</th>
-        // </tr>";
     
         while ($item = mysqli_fetch_assoc($result))
     
@@ -61,13 +46,13 @@
     
 
     //Make that into a JSON array
-    $results = json_encode( $results );
+    // $results = json_encode( $results );
 
     //Put those results in a file (create if file not exist)
-    $fileName = 'backupfile' . time() . '.txt';
-    $file = fopen( $fileName , 'a'  );
-    fwrite( $file, $results );
-    fclose( $file );
+    // $fileName = 'backupfile' . time() . '.txt';
+    // $file = fopen( $fileName , 'a'  );
+    // fwrite( $file, $results );
+    // fclose( $file );
 
     // //Delete the rows that you just backed up
     // $query_delete = "DELETE FROM utenti ORDER BY id DESC LIMIT 50";
