@@ -18,7 +18,40 @@ include 'config.php';
 
 <body>
     <style>
+            /* Modal stijlen */
+            .modal {
+            display: none; /* Verbergt de modal standaard */
+            position: fixed; /* Zorgt ervoor dat de modal bovenop de pagina wordt weergegeven */
+            z-index: 1; /* Zorgt ervoor dat de modal bovenop andere elementen wordt weergegeven */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Zorgt ervoor dat de modal kan worden gescrold als deze groter is dan het scherm */
+            background-color: rgba(0, 0, 0, 0.4); /* Voegt een semi-transparante overlay toe */
+        }
 
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* Plaatst de modal verticaal en horizontaal in het midden van het scherm */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
     <!-- NAVBAR BEGIN -->
     <div class="navbar">
