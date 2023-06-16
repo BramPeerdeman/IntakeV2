@@ -63,7 +63,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.navbar .items > div > p {
+.navbar .items > div > a > p {
   text-align: center;
 }
 .navbar .items:hover {
