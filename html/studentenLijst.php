@@ -18,23 +18,30 @@ include 'config.php';
 
 <body>
     <style>
-            /* Modal stijlen */
-            .modal {
-            display: none; /* Verbergt de modal standaard */
-            position: fixed; /* Zorgt ervoor dat de modal bovenop de pagina wordt weergegeven */
-            z-index: 1; /* Zorgt ervoor dat de modal bovenop andere elementen wordt weergegeven */
+        /* Modal stijlen */
+        .modal {
+            display: none;
+            /* Verbergt de modal standaard */
+            position: fixed;
+            /* Zorgt ervoor dat de modal bovenop de pagina wordt weergegeven */
+            z-index: 1;
+            /* Zorgt ervoor dat de modal bovenop andere elementen wordt weergegeven */
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto; /* Zorgt ervoor dat de modal kan worden gescrold als deze groter is dan het scherm */
-            background-color: rgba(0, 0, 0, 0.4); /* Voegt een semi-transparante overlay toe */
+            overflow: auto;
+            /* Zorgt ervoor dat de modal kan worden gescrold als deze groter is dan het scherm */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Voegt een semi-transparante overlay toe */
         }
 
         .modal-content {
             background-color: #fefefe;
-            box-shadow: 20px 20px 50px 10px rgb(0, 0, 0);;
-            margin: 15% auto; /* Plaatst de modal verticaal en horizontaal in het midden van het scherm */
+            box-shadow: 20px 20px 50px 10px rgb(0, 0, 0);
+            ;
+            margin: 15% auto;
+            /* Plaatst de modal verticaal en horizontaal in het midden van het scherm */
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
@@ -103,9 +110,9 @@ include 'config.php';
         </div>
         <hr class="navbarLine">
         <div class="items itemsLogout">
-         <div class="logout"><a href="../php/logout.php"><img class="logoutImage" src="../assets/icons/logoutIcon.png" alt="logout Icon"
-                    width="100%" height="100%"></a>
-                    <a href="../php/logout.php"><p>log uit</p></a>
+            <div class="logout"><a href="../php/logout.php"><img class="logoutImage"
+                        src="../assets/icons/logoutIcon.png" alt="logout Icon" width="100%" height="100%"></a>
+                <p>log uit</p>
             </div>
         </div>
     </div>
@@ -126,20 +133,20 @@ include 'config.php';
                 <input type="text" id="zoeken" name="search" placeholder="Zoeken...">
                 <form method="GET" action="">
                     <select name="filter" id="filter">
-                        <option value="naam" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'naam')
-                            echo ' selected'; ?> selected? ; ??>Naam</option>
-                        <option value="geslacht" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'geslacht')
-                            echo ' selected'; ?>>Geslacht</option>
-                        <option value="id" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'id')
-                            echo ' selected'; ?>?? ; ?? ID>ID</option>
-                        <option value="intake" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'intake')
-                            echo ' selected';?>> Intake</option>
-                        <option value="opdracht" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'opdracht')
-                            echo ' selected'; ?>>Opdracht</option>
-                        <option value="beoordeeld" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'beoordeeld')
+                        <option value="naam" <?php if (isset($_GET['filter']) && $_GET['filter']==='naam') echo ?
+                            selected'; ?> selected? ; ??>Naam</option>
+                        <option value="geslacht" <?php if (isset($_GET['filter']) && $_GET['filter']==='geslacht') echo
+                            ' selected'; ?>>Geslacht</option>
+                        <option value="id" <?php if (isset($_GET['filter']) && $_GET['filter']==='id') echo ? selected?;
+                            ?>?? ; ?? ID>ID</option>
+                        <option value="intake" <?php if (isset($_GET['filter']) && $_GET['filter']==='intake') echo ?
+                            selected'; ?>> Intake</option>
+                        <option value="opdracht" <?php if (isset($_GET['filter']) && $_GET['filter']==='opdracht') echo
+                            ' selected'; ?>>Opdracht</option>
+                        <option value="beoordeeld" <?php if (isset($_GET['filter']) && $_GET['filter']==='beoordeeld')
                             echo ' selected'; ?>>Beoordeeld</option>
-                        <option value="score" <?php if (isset($_GET['filter']) && $_GET['filter'] === 'score')
-                            echo ' selected'; ?>>Score</option>
+                        <option value="score" <?php if (isset($_GET['filter']) && $_GET['filter']==='score') echo ?
+                            selected'; ?>>Score</option>
                     </select>
                     <input type="submit" value="Filter toevoegen" id="filter-submit">
                 </form>
@@ -193,18 +200,18 @@ include 'config.php';
                     // Handle the error appropriately
                 }
 
-        if ($result->num_rows > 0) {
-            // Output data of each row
-            while ($row = $result->fetch_assoc()) {
-                echo "<li class='table-row'><div class='col col-1'>" . $row["HeleNaam"] . "</div><hr><div class='col col-2'>" . $row["Geslacht"] . "</div><hr><div class='col col-3'>"
-                    . $row["StudentID"] . "</div><hr><div class='col col-4'>" . $row["IntakeNaam"] . "</div><hr><div class='col col-5'>" . $row["OpdrachtNaam"] . "</div><hr><div class='col col-6'>"
-                    . $row["Gesprek_Software_Development_YN"] . "</div><hr><div class='col col-7'>" . $row["Score"] . "</div><hr><div class='col col-8'><button class='userinfo' data-id='" . $row['StudentID'] . "'>INFO</button></div></li>";
-            }
-        } else {
-            echo "<li><div colspan='7'>0 results</div></li>";
-        }
-        $mysqli->close();
-        ?>
+                if ($result->num_rows > 0) {
+                    // Output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<li class='table-row'><div class='col col-1'>" . $row["HeleNaam"] . "</div><hr><div class='col col-2'>" . $row["Geslacht"] . "</div><hr><div class='col col-3'>"
+                            . $row["StudentID"] . "</div><hr><div class='col col-4'>" . $row["IntakeNaam"] . "</div><hr><div class='col col-5'>" . $row["OpdrachtNaam"] . "</div><hr><div class='col col-6'>"
+                            . $row["Gesprek_Software_Development_YN"] . "</div><hr><div class='col col-7'>" . $row["Score"] . "</div><hr><div class='col col-8'><button class='userinfo' data-id='" . $row['StudentID'] . "'>INFO</button></div></li>";
+                    }
+                } else {
+                    echo "<li><div colspan='7'>0 results</div></li>";
+                }
+                $mysqli->close();
+                ?>
         </div>
     </div>
 
@@ -224,8 +231,8 @@ include 'config.php';
         </div>
     </div>
 
-        <!-- De modal -->
-        <div id="empModal" class="modal">
+    <!-- De modal -->
+    <div id="empModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-body">
@@ -237,8 +244,8 @@ include 'config.php';
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
 
-// INFO 
-$(document).ready(function () {
+        // INFO 
+        $(document).ready(function () {
             // Klikfunctie voor het openen van de modal
             $('ul.responsive-table').on('click', 'button.userinfo', function () {
                 var rowData = $(this).closest('li').find('.col').map(function () {
@@ -269,29 +276,29 @@ $(document).ready(function () {
         });
 
 
-// ZOEKEN
-    $(document).ready(function() {
-        $('#zoeken').on('input', function() {
-            var filter = $(this).val().toUpperCase();
-            var rows = $('.table-row');
+        // ZOEKEN
+        $(document).ready(function () {
+            $('#zoeken').on('input', function () {
+                var filter = $(this).val().toUpperCase();
+                var rows = $('.table-row');
 
-            rows.each(function() {
-                var cells = $(this).find('.col');
-                var visible = false;
+                rows.each(function () {
+                    var cells = $(this).find('.col');
+                    var visible = false;
 
-                cells.each(function() {
-                    if ($(this).text().toUpperCase().indexOf(filter) > -1) {
-                        visible = true;
-                        return false; // Break the loop
-                    }
+                    cells.each(function () {
+                        if ($(this).text().toUpperCase().indexOf(filter) > -1) {
+                            visible = true;
+                            return false; // Break the loop
+                        }
+                    });
+
+                    $(this).toggle(visible);
                 });
-
-                $(this).toggle(visible);
             });
         });
-    });
 
-</script>
+    </script>
     <script src="../js/navbar.js"></script>
 </body>
 
