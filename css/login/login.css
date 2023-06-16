@@ -52,7 +52,7 @@ body {
   display: flex;
 }
 #login-box #login-box-left {
-  background-image: url("/assets/images/backgroundGroen.png");
+  background-image: url("../../assets/images/backgroundGroen.png");
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
