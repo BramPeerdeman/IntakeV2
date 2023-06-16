@@ -128,29 +128,25 @@ include 'config.php';
             </div>
         </div>
         <!-- STUDENTEN LIJST -->
-        <div id="content">
-            <div id="zoeken-en-filter">
-                <input type="text" id="zoeken" name="search" placeholder="Zoeken...">
-                <form method="GET" action="">
-                    <select name="filter" id="filter">
-                        <option value="naam" <?php if (isset($_GET['filter']) && $_GET['filter']==='naam') echo ?
-                            selected'; ?> selected? ; ??>Naam</option>
-                        <option value="geslacht" <?php if (isset($_GET['filter']) && $_GET['filter']==='geslacht') echo
-                            ' selected'; ?>>Geslacht</option>
-                        <option value="id" <?php if (isset($_GET['filter']) && $_GET['filter']==='id') echo ? selected?;
-                            ?>?? ; ?? ID>ID</option>
-                        <option value="intake" <?php if (isset($_GET['filter']) && $_GET['filter']==='intake') echo ?
-                            selected'; ?>> Intake</option>
-                        <option value="opdracht" <?php if (isset($_GET['filter']) && $_GET['filter']==='opdracht') echo
-                            ' selected'; ?>>Opdracht</option>
-                        <option value="beoordeeld" <?php if (isset($_GET['filter']) && $_GET['filter']==='beoordeeld')
-                            echo ' selected'; ?>>Beoordeeld</option>
-                        <option value="score" <?php if (isset($_GET['filter']) && $_GET['filter']==='score') echo ?
-                            selected'; ?>>Score</option>
-                    </select>
-                    <input type="submit" value="Filter toevoegen" id="filter-submit">
-                </form>
-            </div>
+<!-- STUDENTEN LIJST -->
+<div id="content">
+    <div id="zoeken-en-filter">
+        <input type="text" id="zoeken" name="search" placeholder="Zoeken...">
+        <form method="GET" action="">
+            <select name="filter" id="filter">
+                <option value="naam" <?php if (isset($_GET['filter']) && $_GET['filter']==='naam') echo 'selected'; ?>>Naam</option>
+                <option value="geslacht" <?php if (isset($_GET['filter']) && $_GET['filter']==='geslacht') echo 'selected'; ?>>Geslacht</option>
+                <option value="id" <?php if (isset($_GET['filter']) && $_GET['filter']==='id') echo 'selected'; ?>>ID</option>
+                <option value="intake" <?php if (isset($_GET['filter']) && $_GET['filter']==='intake') echo 'selected'; ?>>Intake</option>
+                <option value="opdracht" <?php if (isset($_GET['filter']) && $_GET['filter']==='opdracht') echo 'selected'; ?>>Opdracht</option>
+                <option value="beoordeeld" <?php if (isset($_GET['filter']) && $_GET['filter']==='beoordeeld') echo 'selected'; ?>>Beoordeeld</option>
+                <option value="score" <?php if (isset($_GET['filter']) && $_GET['filter']==='score') echo 'selected'; ?>>Score</option>
+            </select>
+            <input type="submit" value="Filter toevoegen" id="filter-submit">
+        </form>
+    </div>
+</div>
+
             <br>
             <ul class="responsive-table">
                 <li class="table-header">
