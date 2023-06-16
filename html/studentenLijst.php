@@ -1,17 +1,6 @@
 <?php
 
 include 'config.php';
-
-
-
-// We need to use sessions, so you should always start sessions using the below code.
-session_start();
-// If the user is not logged in redirect to the login page...
-if (!isset($_SESSION['loggedin'])) {
-	header('Location: index.html');
-	exit;
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,6 +37,10 @@ if (!isset($_SESSION['loggedin'])) {
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
+        }
+
+        .userinfo {
+            background-color: ;
         }
 
         .close {
@@ -203,9 +196,9 @@ if (!isset($_SESSION['loggedin'])) {
                 </div>
                 <div class="modal-body">
                 </div>
-                <div class="modal-footer">
+                <!-- <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -253,8 +246,6 @@ $(document).ready(function () {
                 }
             });
         });
-
-
 
 
 // ZOEKEN
