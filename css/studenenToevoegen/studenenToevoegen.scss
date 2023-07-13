@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,300&display=swap");
+
+@font-face {
+    font-family: face;
+    src: url(../);
+}
+
+// ******************************************************************** VARIABLES
+
+// font
+
+$font-size-titel: 30px;
+$font-size-text: 16px;
+
+// colors
+
+$color-background: #f5f7fa;
+$color-white: #ffffff;
+$color-GLRgroen: #85d109;
+$color-dropshadow: #98989825;
+$color-letters: #000000;
+
+// ******************************************************************** GLOBAL
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Roboto", sans-serif;
+    // outline: red 0.5px solid;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: $color-background;
+    display: flex;
+}
+
+::selection {
+    background: $color-GLRgroen;
+}
+
+// ******************************************************************** ...
+
+#main-content {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+// ******************************************************************** TAB NAV
+
+#tab-nav {
+    width: 100%;
+    height: 140px;
+    // margin-bottom: 20px;
+
+    #tab-title {
+        width: 100%;
+        height: 70px;
+        padding: 0px 40px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+
+        p {
+            font-size: 25px;
+        }
+    }
+
+    #tabs {
+        width: 100%;
+        height: 70px;
+        padding: 20px 40px;
+        border-bottom: 2px solid lightgray;
+
+        display: flex;
+
+        p {
+            align-self: center;
+            font-size: 18px;
+            margin-right: 35px;
+            font-weight: lighter;
+
+            a {
+                color: $color-letters;
+                font-weight: lighter;
+            }
+        }
+
+        #current-page {
+            a {
+                color: $color-GLRgroen;
+                font-weight: bold;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 43px;
+                    left: 0;
+
+                    width: 100%;
+                    height: auto;
+                    border-bottom: 3px solid $color-GLRgroen;
+                }
+            }
+        }
+    }
+}
+
+// ******************************************************************** CONTENT
+
+#content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .box {
+        background-color: white;
+        width: 100%;
+        height: 90%;
+        border-radius: 8px;
+        padding: 50px 70px;
+    }
+
+    .btn-toevoeg {
+        background-color: $color-GLRgroen;
+        border: none;
+        border-radius: 5px;
+
+        height: 60px;
+        margin-top: 5%;
+
+        color: white;
+        font-size: 20px;
+        font-weight: bolder;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: 0.1s;
+        }
+    }
+
+    #toevoegen {
+        height: 100%;
+        flex-grow: 2;
+        padding: 80px 40px 80px 80px;
+
+        h1 {
+            height: 10%;
+            padding: 20px 40px;
+        }
+
+        #box-toevoegen {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .titel {
+                font-size: 18px;
+                padding: 5px 10px;
+                font-weight: lighter;
+            }
+            .input-box {
+                border-radius: 8px;
+                border: 1px solid #aaa;
+                width: 100%;
+                height: 60px;
+
+                padding: 0px 20px;
+                font-size: 15px;
+                font-weight: normal;
+            }
+            #naam {
+            }
+            #toevoeg-wrapper {
+                display: flex;
+
+                #geboortedatum {
+                    flex-grow: 1;
+                    padding-right: 20px;
+                    #geboortedatum-input {
+                    }
+                }
+
+                #geslacht {
+                    flex-grow: 1;
+                    padding-left: 20px;
+                    position: relative;
+
+                    &::after {
+                        content: "🢓";
+                        position: absolute;
+                        pointer-events: none;
+
+                        right: 15px;
+                        bottom: -20px;
+                        font-size: 50px;
+
+                        width: auto;
+                        height: auto;
+                        color: #bebebe;
+                    }
+
+                    #geslacht-input {
+                        appearance: none;
+
+                        * {
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+
+            #email {
+            }
+        }
+    }
+
+    #importeren {
+        height: 100%;
+        flex-grow: 1;
+        padding: 80px 30px;
+
+        h1 {
+            height: 10%;
+            padding: 20px 40px;
+        }
+
+        #box-importeren {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-evenly;
+
+            p {
+                font-size: 18px;
+                padding: 5px 10px;
+                font-weight: lighter;
+            }
+
+            #voorbeeld-bestand {
+                font-weight: bold;
+                text-decoration: underline;
+                margin-bottom: 20px;
+                color: black;
+            }
+
+            #drag-drop {
+                align-self: center;
+                width: 80%;
+                height: 40%;
+
+                border-radius: 8px;
+                border: 2px dotted gray;
+                background-color: #dfdfdf;
+                color: gray;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+                padding: 20px;
+                position: relative;
+
+                #file-input {
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    padding: 80px;
+
+                    &::-webkit-file-upload-button {
+                        width: 60%;
+                        height: 40px;
+
+                        color: white;
+                        font-size: 15px;
+                        font-weight: bold;
+                        align-self: center;
+
+                        background-color: $color-GLRgroen;
+                        border: none;
+                        border-radius: 5px;
+
+                        height: 60px;
+                        margin-top: 5%;
+                        padding: 10px;
+
+                        color: white;
+                        font-size: 20px;
+                        font-weight: bolder;
+
+                        &:hover {
+                            transform: scale(1.05);
+                            transition: 0.1s;
+                        }
+                    }
+                }
+
+                #drag-name {
+                    width: 100%;
+                    font-weight: 600;
+                    position: absolute;
+                    top: 15%;
+                }
+
+                #of-name {
+                    font-size: 15px;
+                    margin: 20px 0px 0px 0px;
+                    font-weight: 600;
+                    position: absolute;
+                    top: 25%;
+                }
+            }
+
+            #scheidlijn {
+                width: 90%;
+                align-self: center;
+                margin-bottom: 20px;
+            }
+
+            #bestanden {
+                width: 100%;
+                height: auto;
+
+                font-weight: normal;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// ******************************************************************** ...
+
+@media screen and (max-width: 600px) {
+}

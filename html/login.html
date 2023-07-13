@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intake Log In</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Css -->
+    <link rel="stylesheet" href="../css/login/login.css">
+    <link rel="stylesheet" href="../css/login/login.scss">
+    <!-- Script -->
+    <script src="../js/login.js" defer></script>
+</head>
+
+<body>
+    <main id="main-content">
+
+        <div id="page-background"></div>
+        <div id="login-box">
+            <div id="login-box-left">
+                <img src="../assets/icons/glrLogoTrans.png" alt="GLR Logo">
+            </div>
+            <div id="login-box-right">
+                <div id="welcome-message">
+                    <h1 id="titel">Welkom terug!</h1>
+                    <p id="info">Vul hieronder uw gegevens in.</p>
+                </div>
+
+                <div id="input-fields">
+                    <form action="../php/authenticate.php" method="post">
+                    <input type="text" name="username" id="username" placeholder="Username, Naam: test">
+                    <input type="password" name="password" id="password" placeholder="Password, Wachtwoord: test">
+                    <button type="submit" value="login" id="login-button">Log in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="login">
+            <h1>Login</h1>
+            <form action="authenticate.php" method="post">
+                <label for="username">
+                    <i class="fas fa-user"></i>
+                </label>
+                <input type="text" name="username" placeholder="Username" id="username" required>
+                <label for="password">
+                    <i class="fas fa-lock"></i>
+                </label>
+                <input type="password" name="password" placeholder="Password" id="password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div> -->
+
+    </main>
+</body>
+
+</html>

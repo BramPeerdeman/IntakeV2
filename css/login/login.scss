@@ -1,0 +1,204 @@
+@font-face {
+    font-family: face;
+    src: url(../);
+}
+
+// ******************************************************************** VARIABLES
+
+// font
+
+$font-size-titel: 30px;
+$font-size-text: 16px;
+
+// colors
+
+$color-background: #f5f7fa;
+$color-white: #ffffff;
+$color-GLRgroen: #85d109;
+$color-dropshadow: #98989825;
+$color-letters: #000000;
+
+// ******************************************************************** GLOBAL
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+::selection {
+    background: $color-GLRgroen;
+}
+
+// ******************************************************************** ...
+
+#main-content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#page-background {
+    width: 30%;
+    height: 100%;
+    background-color: $color-GLRgroen;
+
+    position: absolute;
+    z-index: 0;
+}
+
+#login-box {
+    width: 88%;
+    height: 80%;
+
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 32px 0px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    #login-box-left {
+        background-image: url("/assets/images/backgroundGroen.png");
+        background-position: left;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        width: 27.25%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 60%;
+        }
+    }
+
+    #login-box-right {
+        width: 72.75%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        #welcome-message {
+            text-align: center;
+            text-transform: uppercase;
+            // padding-bottom: 15px;
+            #titel {
+                color: $color-GLRgroen;
+                font-size: 70px;
+            }
+
+            #info {
+                color: $color-GLRgroen;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+
+        #input-fields {
+            width: 50%;
+            height: 40%;
+            padding-top: 20px;
+
+            form {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                #username {
+                    width: 100%;
+                    height: 40px;
+
+                    text-align: center;
+                    color: black;
+                    font-size: 20px;
+                    font-weight: bold;
+
+                    border: none;
+                    border-bottom: black solid 3px;
+
+                    &::placeholder {
+                        text-align: center;
+                        color: black;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+                }
+
+                #password {
+                    width: 100%;
+                    height: 40px;
+
+                    text-align: center;
+                    text-align: center;
+                    color: black;
+                    font-size: 20px;
+                    font-weight: bold;
+
+                    border: none;
+                    border-bottom: black solid 3px;
+
+                    &::placeholder {
+                        text-align: center;
+                        color: black;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+                }
+
+                #login-button {
+                    background-color: $color-GLRgroen;
+                    border: none;
+                    border-radius: 5px;
+
+                    height: 60px;
+                    margin-top: 5%;
+
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
+
+                    &:hover {
+                        transform: scale(1.05);
+                        transition: 0.1s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ******************************************************************** ...
+
+@media screen and (max-width: 600px) {
+}

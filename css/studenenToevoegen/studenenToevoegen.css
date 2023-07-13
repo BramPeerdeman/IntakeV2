@@ -1,0 +1,271 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,300&display=swap");
+@font-face {
+  font-family: face;
+  src: url(../);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f7fa;
+  display: flex;
+}
+
+::-moz-selection {
+  background: #85d109;
+}
+
+::selection {
+  background: #85d109;
+}
+
+#main-content {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#tab-nav {
+  width: 100%;
+  height: 140px;
+}
+#tab-nav #tab-title {
+  width: 100%;
+  height: 70px;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+#tab-nav #tab-title p {
+  font-size: 25px;
+}
+#tab-nav #tabs {
+  width: 100%;
+  height: 70px;
+  padding: 20px 40px;
+  border-bottom: 2px solid lightgray;
+  display: flex;
+}
+#tab-nav #tabs p {
+  align-self: center;
+  font-size: 18px;
+  margin-right: 35px;
+  font-weight: lighter;
+}
+#tab-nav #tabs p a {
+  color: #000000;
+  font-weight: lighter;
+}
+#tab-nav #tabs #current-page a {
+  color: #85d109;
+  font-weight: bold;
+  position: relative;
+}
+#tab-nav #tabs #current-page a::after {
+  content: "";
+  position: absolute;
+  top: 43px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  border-bottom: 3px solid #85d109;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#content .box {
+  background-color: white;
+  width: 100%;
+  height: 90%;
+  border-radius: 8px;
+  padding: 50px 70px;
+}
+#content .btn-toevoeg {
+  background-color: #85d109;
+  border: none;
+  border-radius: 5px;
+  height: 60px;
+  margin-top: 5%;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#content .btn-toevoeg:hover {
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+#content #toevoegen {
+  height: 100%;
+  flex-grow: 2;
+  padding: 80px 40px 80px 80px;
+}
+#content #toevoegen h1 {
+  height: 10%;
+  padding: 20px 40px;
+}
+#content #toevoegen #box-toevoegen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#content #toevoegen #box-toevoegen .titel {
+  font-size: 18px;
+  padding: 5px 10px;
+  font-weight: lighter;
+}
+#content #toevoegen #box-toevoegen .input-box {
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  width: 100%;
+  height: 60px;
+  padding: 0px 20px;
+  font-size: 15px;
+  font-weight: normal;
+}
+#content #toevoegen #box-toevoegen #toevoeg-wrapper {
+  display: flex;
+}
+#content #toevoegen #box-toevoegen #toevoeg-wrapper #geboortedatum {
+  flex-grow: 1;
+  padding-right: 20px;
+}
+#content #toevoegen #box-toevoegen #toevoeg-wrapper #geslacht {
+  flex-grow: 1;
+  padding-left: 20px;
+  position: relative;
+}
+#content #toevoegen #box-toevoegen #toevoeg-wrapper #geslacht::after {
+  content: "🢓";
+  position: absolute;
+  pointer-events: none;
+  right: 15px;
+  bottom: -20px;
+  font-size: 50px;
+  width: auto;
+  height: auto;
+  color: #bebebe;
+}
+#content #toevoegen #box-toevoegen #toevoeg-wrapper #geslacht #geslacht-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+#content #toevoegen #box-toevoegen #toevoeg-wrapper #geslacht #geslacht-input * {
+  font-weight: normal;
+}
+#content #importeren {
+  height: 100%;
+  flex-grow: 1;
+  padding: 80px 30px;
+}
+#content #importeren h1 {
+  height: 10%;
+  padding: 20px 40px;
+}
+#content #importeren #box-importeren {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+}
+#content #importeren #box-importeren p {
+  font-size: 18px;
+  padding: 5px 10px;
+  font-weight: lighter;
+}
+#content #importeren #box-importeren #voorbeeld-bestand {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  color: black;
+}
+#content #importeren #box-importeren #drag-drop {
+  align-self: center;
+  width: 80%;
+  height: 40%;
+  border-radius: 8px;
+  border: 2px dotted gray;
+  background-color: #dfdfdf;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+}
+#content #importeren #box-importeren #drag-drop #file-input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px;
+}
+#content #importeren #box-importeren #drag-drop #file-input::-webkit-file-upload-button {
+  width: 60%;
+  height: 40px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  align-self: center;
+  background-color: #85d109;
+  border: none;
+  border-radius: 5px;
+  height: 60px;
+  margin-top: 5%;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+}
+#content #importeren #box-importeren #drag-drop #file-input::-webkit-file-upload-button:hover {
+  transform: scale(1.05);
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+#content #importeren #box-importeren #drag-drop #drag-name {
+  width: 100%;
+  font-weight: 600;
+  position: absolute;
+  top: 15%;
+}
+#content #importeren #box-importeren #drag-drop #of-name {
+  font-size: 15px;
+  margin: 20px 0px 0px 0px;
+  font-weight: 600;
+  position: absolute;
+  top: 25%;
+}
+#content #importeren #box-importeren #scheidlijn {
+  width: 90%;
+  align-self: center;
+  margin-bottom: 20px;
+}
+#content #importeren #box-importeren #bestanden {
+  width: 100%;
+  height: auto;
+  font-weight: normal;
+  text-align: center;
+}/*# sourceMappingURL=studenenToevoegen.css.map */

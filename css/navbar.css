@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,300&display=swap");
+@font-face {
+  font-family: face;
+  src: url(../);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+::-moz-selection {
+  background: #85D109;
+}
+
+::selection {
+  background: #85D109;
+}
+
+.navbar {
+  flex-grow: 1;
+  background-color: #85D109;
+  max-width: 150px;
+  height: 100vh;
+}
+.navbar .navbarLine {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  bottom: 170px;
+  border: solid black 1px;
+  left: 25px;
+}
+.navbar .items {
+  margin: 0 0 10px 0;
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  transition: 0.2s;
+}
+.navbar .items:last-child {
+  position: absolute;
+  bottom: 0;
+  background-color: transparent;
+}
+.navbar .items > div {
+  background-color: transparent;
+  width: 60%;
+  height: 60%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.navbar .items > div > a > p {
+  text-align: center;
+}
+.navbar .items:hover {
+  background-color: rgba(0, 0, 0, 0.0823529412);
+}
+.navbar .logo {
+  width: 75% !important;
+  height: 75% !important;
+}
+.navbar .logout {
+  transform: rotate();
+}/*# sourceMappingURL=navbar.css.map */

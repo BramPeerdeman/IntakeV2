@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,300&display=swap');
+
+@font-face {
+    font-family: face;
+    src: url(../);
+}
+
+// ******************************************************************** VARIABLES
+
+// font
+
+$font-size-titel: 30px;
+$font-size-text: 16px;
+
+// colors
+
+$color-background: #F5F7FA;
+$color-white: #ffffff;
+$color-GLRgroen: #85D109;
+$color-dropshadow: #98989825;
+$color-letters: #000000;
+
+// ******************************************************************** GLOBAL
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+::selection {
+    background: $color-GLRgroen;
+}
+
+// ******************************************************************** NAVBAR
+
+.navbar{
+    flex-grow: 1;
+    background-color: $color-GLRgroen;
+    max-width: 150px;
+    height: 100vh;
+
+
+.navbarLine{
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    bottom: 170px;
+    border: solid black 1px;
+    left: 25px;
+}
+
+.items{
+    margin: 0 0 10px 0;
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    transition: 0.2s;
+
+    &:last-child{
+        position: absolute;
+        bottom: 0;
+        background-color: transparent;
+    }
+}
+.items > div{
+    background-color: transparent;
+    width: 60%;
+    height: 60%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.items > div > p{
+    text-align: center;
+}
+.items:hover{
+    background-color: #00000015;
+}
+.logo{
+    width: 75% !important;
+    height: 75% !important;
+}
+.logout{
+    transform: rotate();
+}
+
+}
+
+
+
+
+// ******************************************************************** MEDIA QUERY
+
+@media screen and (max-width: 1250px) {
+}
+
